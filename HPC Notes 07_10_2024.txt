@@ -1,0 +1,1301 @@
+☑️	Health Insurance - is a type of insurance that covers medical expenses that arise due to any illness.
+
+☑️	Premium --> Fixed amount to be paid by SPONSOR to the Insurance Company
+
+☑️	Frequency -- Monthly, Yearly or Semi Annually
+
+☑️	Insurance Company --> Payer/MCO (Managed Care Organization)/Health Plan
+
+☑️	Policy -- Contract between patient and IC
+
+☑️	Types of Policies
+	-----------------
+
+	Individual Policy -- Individual/Member Pays the premium..
+	Group Policy -- Group/Org pays the premium
+	Government Policy -- Govt pays the premium
+
+☑️	SPONSOR - Entity who pays the premium on behalf of the member
+
+☑️	Subscriber -- Policy holder/Employee
+☑️	Dependent -- Dependents of the Employee
+☑️	Member -- Subscriber + Dependent
+
+☑️	Provider - Entity who provides medical services to the member
+	   Physician/doctor/nurse/xray/Lab/Hospital(Facility)
+	  
+☑️	Types of Transactions
+	-----------------------
+
+	Cashless Transaction
+		Raise an authorization request to the Payer by the Provider
+		Once it is approved with Proof all the Covered expenses will be Paid by the IC
+		Non-Covered expensed will have to be taken care by the member
+
+☑️	Claim --> Process of raising the expenses incured for medical services
+
+☑️	Cash Transaction --> Member Pays the expenses and later submits a claim and gets it reimbursed.
+
+☑️	Treatment - Services
+
+☑️	Inpatient --> Member is admitted in the hospital with min of 24 hrs
+☑️	Inpatient/Hospital/Facility/Instituitional Claims
+
+☑️	Outpatient --> Member takes the treatment and returns back within 24 hrs
+☑️	Outpatient/Physician/Professional Claims
+
+☑️	Eligibiity (w.r.t claims)
+	-------------------------
+	Member is active
+	Member paid the premium
+	whether the treatment was given or not
+	Whether the treatment is covered in the policy
+	Whether the SI is already met
+	Whether Duplicate Claim
+
+Sum Insured ==> 3L
+P1 - M1 - 2nd - Mbr C1 -- 1L --> IC Pays
+     M1 - 4th - Mbr C2 -- 2L --> IC Pays
+     M1 - 9th - Mbr C3 -- 50K --> IC will not pay
+
+Pre-existing Conditions
+------------------------
+A condition for which the individual received medical care prior to the effective date of Coverage.
+
+P1 -- Covers Heart Disease (Pre Existing Condition Excluded)
+
+M1 - joins the policy P1 on 01/1/2022, he is healthy person
+	04/1/2022, he has a heart problem for the first time
+	Policy P1 covers the expenses.
+
+M2 - joins the policy P1 on 1/1/2022, he is taking treatment for heart problem from 01/01/2021
+	and on 5/1/2022, he has a heart problem again
+	Policy P1 does not cover the expenses
+
+
+Before member joins the policy, if already they have tat health issue then for that condition treatment 
+cost will not be covered.
+
+Network -- Collection of Providers
+Network Group -- Collection of Networks
+Network Set/Superset of all the Networks -- Collection of Network Group
+
+CTS India		-- Network Set/Superset of all the Networks
+	NWGNW
+	Pun
+	Kol
+	Noi
+
+	SWGNW		-- Network Group
+	CHN		-- Network
+	  Apollo
+	  Kauvery
+	  
+	HYD
+	BLR
+
+In Network -- Provider is in tie up/Contract with the IC
+
+Out of Network -- Provider will not be in tie up/contract with the IC
+
+PCP (Primary Care Physician) -- Gatekeeper
+
+Provider Payment method
+------------------------
+
+Fee For Service (FFS) -- Provider gets paid for all the services, traditional method which was followed.
+				-- Unnecesary treatment
+				-- HC COst increased
+				-- Loss for IC
+
+Capitation -- Risk Sharing Arrangement
+
+Based on how many ever members are enrolled under tat particular Provider, the payment happens
+Per Member Per Month (PMPM) -- $2000
+
+Prov1		($2000 per month for per member)
+
+ Jan - 10 Enrolled members -- $2000*10 = $20000
+ Feb - 5  Enrolled members   -- $2000*5  = $10000
+ Mar - 15 Enrolled members  -- $2000*15 = $30000
+
+Jan 
+	M1 - Healthy -- No visit to the provider
+	IC pays $2000 to the Provider
+	IC - Loss of $2000
+	Provider - Profit of $2000
+
+	M2 - went for some service for $5000
+	IC pays $2000 to the Provider
+	IC - Profit of $3000
+	Provider - Loss of $3000
+
+Provider will not provider unnecessary
+Focus on preventive and wellness programs
+-----------------------------------------
+Education
+Vaccination
+Diet 
+Camp
+Counselling
+
+This capitation method is very useful for IC, as it tries to reduce the HC cost and also ensures good
+treatment to the members.
+
+Cost Shifting
+-------------
+The loss from one member is compensated by the profit from another member
+
+Max allowed amount ==> Maximum amount the IC will pay for a particular service
+
+
+COB (Co-ordination of Benefit) -- Non duplication of Benefits
+---------------------------------------------------------------
+
+Mom -- has a policy -- Kid Covered as a dependent -- $6000
+Dad -- has a policy -- Kid Covered as a dependent -- $4000
+
+Kid -- gets a treatment -- $8000
+
+Mom policy pays = $6000
+Dad Policy Pays = $4000
+               ----------
+		  $10000 > $8000
+
+Mom - Her policy will be the Primary coverage for the kid
+Dad - His policy will be secondary and mom's policy will be primary
+
+Mom Policy Pays = $6000
+Dad policy pays = ($8000-$6000=$2000)
+		- Min ($4000, $2000)= $2000
+		--------
+		  $8000 <= total treatment cost
+
+Kid -- gets a treatment -- $12000
+
+Mom - $6000
+Dad - ($12000-$6000) = $6000 = $4000
+      ---------
+      $10000 <= Total treatment cost
+
+PBM - Pharmacy Benefit Management
+
+EDI -- Electronic Data Interchange
+
+EOB - Explanation of Benefit
+
+Copay -- Fixed amount paid by the member at the time of treatment for a particular service. eg: Consultation fee
+
+Coinsurance -- Financial responsibility shared by Member and Insurance Company. 90% (90% of the total cost
+will be paid by the IC and 10% will be paid by the member)
+
+Deductible -- Flat dollar amount that needs to met before the IC starts paying for any service for a particular benefit period.
+
+Benefit Period - Calendar Year/Plan Year
+
+OOP (Out of Pocket) expenses -- Copay+Coinsurance+Deductible
+
+OOP Max-- $3000 for a benefit period 
+OOP Lifetime -- $999999999 
+
+Medicare - Older age>65
+Medicaid - Low income ppl
+
+EDI - Electronic Data Interchange
+
+HMOs offer lower costs but limited provider choice. 
+PPOs provide more flexibility with higher expenses, especially for out-of-network care. 
+EPOs offer moderate costs with strict in-network usage, except for emergencies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Flexibility when choosing providers and locations, a PPO plan may better fit your needs. 
+An EPO plan may be a better option if you want the flexibility of a larger network, but don't necessarily need out-of-network benefits.
+
+EPO Benefits
+------------
+EPO health insurance offers some benefits like those we get from a PPO and HMO health plan, like flexibility and lower costs. Advantages of an EPO plan include: No referrals needed. Usually no requirement to choose a primary care provider. Generally lower out-of-pocket costs than a PPO plan
+
+POS: An affordable plan with out-of-network coverage
+For slightly higher premiums than an HMO, this plan does cover out-of-network doctors. But you'll pay more. This is an important difference if you are managing a condition and one or more of your doctors are not in the network
+
+Accumulator - Summing up of Amounts or Counter units for all the OOP expenses for that particular plan yr/
+Calendar yr
+
+Credentialing - Background Verification
+
+Medicare
+---------
+Funded and Administered by Federal Government
+
+Eligible
+---------
+Age >=65
+Disabled
+Railroad Retireed
+ESRD (End Stage Renal Disease)
+
+Part A + Part B ==> Original Medicare
+
+Part A
+------
+Covers Hospital Benefits
+Traditional idemnity plan
+Provider Paid by FFS
+No premium to be paid member (govt offers for free)
+Deductible alone need to be met
+Coinsurance to be paid by member
+
+Part B
+-------
+Covers Non-hosptial benefits (Physician/outpatient)
+Traditional idemnity plan
+Premium based on member income 
+Missed enrollment will have penalty
+Deductible need to be met
+Coinsurance to be paid by member
+
+Part C (Medicare Advantage Plan or MA Plan)
+--------------------------------------------
+Part A + Part B + Extra Benefits
+
+Covers Physician and Hospital Benefits
+Provider paid per contract
+OOP
+Additional Benefits
+
+Part D (Prescription Drug Plan)
+--------------------------------
+Covering Pharmacy Benefits
+Member needs to pay premium
+Late Enroll penalties
+OOP
+
+Coverage Gap
+-------------
+Member might not have a policy coverage
+
+To fill the coverage gap we have Medigap Policies
+
+Medigap
+-------
+--> Medicare Supplement Insurance
+--> Covers out of Pocket costs
+--> Federal and State law regulate
+--> Individual needs to pay a premium (but the premium will be less)
+
+Medicaid
+---------
+Administered by State govt and funded by Federal Govt
+
+Eligibility Criteria
+---------------------
+Children
+Pregnant Women
+Adult and elderly below poverty level
+Disabled
+
+Dual Eligible members --> members who are eligible for both Medicare and Medicaid (Disabled and Elderly)
+
+Medi Medi
+
+Medicare - 1st coverage
+Medicaid - Secondary Coverage
+
+Enrollment (Joining a policy)
+
+Eligibility (Time period a member is eligible under a particular plan/product)
+
+Enrollment Period
+
+Initial Enrollment period
+Special enrollment Period
+General Enrollment Period
+Open Enrollment period
+
+Medicare Initial Enrollment Period
+------------------------------------
+
+7 month window period
+
+eg: Mbr birth month : Jun (turns 65)
+
+Mar, Apr, May  Jun  July, Aug, Sep
+
+If the member gets enrolled 3 months prior to birth month ==> Coverage will begin from Birth month
+
+Birth Month (Jun) -- July 
+July              -- Sep
+
+If delay to enroll, then benefits will also be delayed.
+
+General Enrollment Period
+--------------------------
+
+Q1 - enroll (Jan-Mar)
+Q3 - Effective (July1st)
+
+If they enroll in General Enrollment Period and consider Part B also then the member need to pay more
+premium
+
+Claims
+------
+
+Adjudication -> Determine whether a Claim can be paid or not, if it can be paid how much needs to be paid
+(Max Allowed Amount determined)
+
+TPS (Trizetto Provider System) --> is a portal in which Provider can generate a bill to IC and the decision
+can be notified to the Provider.
+
+Facets Core Pricing
+NetworX Pricer
+
+CCA (Clinical Care Advance)
+
+Benefit Amount = Max allowed amount - OOP - COB (if any)
+
+Benefit Amount is the final amount paid by the IC
+
+C1 --> Error --> Claim Errored out -->  Pended with Errors (hold)
+   --> No Error --> Claims will be processed successfully
+			Benefit Amount = 0 (Denied/Reject) (Medical Expenses will not be paid by IC)
+			Benefit Amount > 0
+
+Fever treatment (Service Code - VO)
+----------------
+Apptmt			-->  99215 Procedure Code
+Temp Check 		-->  99216 Procedure Code
+BP Check
+Doctor questions -- from when you are having fever, cold/cough, food allergies, food outside..-- Reason for fever(Root Causes). --> Diagnosis Code
+
+Codes - Claims Processing
+--------------------------
+Procedure Code
+Diagnosis Code
+Revenue Code  (Room & Board)
+Service Code
+
+Industry standard Codes -- Procedure Code, Diag Code, Rev Code
+
+these are supplied by CMS to all the healthcare entities
+
+Capitaion
+---------
+
+CHNNW  (PMPM - $2000)
+
+   Devansish -- Dentist ($2000*2 = $4000)
+	Tanish -- Member
+	Has some Eye problem
+	He meets Devansish
+	Devansish will refer Tanish to Petchi
+
+	Archit -- Member
+
+   Petchi -- Eye Specialist ($2000*2 = $4000)
+	Vignesh -- Member
+	Vignesh has some Dental issues
+	He meets Petchi
+	Petchi will refer to Devansish
+
+	Apeksha -- Member
+
+
+Utilization and Management
+---------------------------
+UM refers to the healthplan programs that manage the use of medical services so that plan members receive
+necessary and appropriate care in a cost effective manner in an appropriate setting
+
+Authorization
+Referral
+
+Facets
+------
+Facets is Cognizant's Trizetto Product used for Core Claims Processing.
+
+Workflow -- Automation of Business rules
+
+Benefits of Facets
+------------------
+Enterprise wide Integrated Platform
+	Modular Functionality
+	Scalability
+	Flexibility
+Broad and Deep Functionality
+Flexible and Open Architecture
+Automation and Configurability
+Proven track record
+
+System Architecture Components
+-------------------------------
+Facets Database (atleast one is mandatory)
+Application Servers (1:N appln servers)
+Facets Interactive (Facets Front End Application)
+Broker Client (web portals)
+
+Facets Flowchart
+-----------------
+
+FlowChart gives the overall view of all the modules/domains in Facets
+
+CTS INDIA		--> Parent Group --> Optional component and used for information/Reporting purpose
+	CTS CHN		--> Group -- Mandatory component
+				We define the bill level
+				Individual
+				Subgroup
+				Group
+	   SEZ		--> Subgroup --> Mandatory -> when bill level in Group is Subgroup
+					 otherwise it is Optional
+	    P		--> Class --> Classification of Employees based on Benefits
+	     Salary     -->  Plan --> Business name of a Product 
+		$40000  -->  Product --> Actual Benefit
+
+	    PA
+	    A
+	   CKC
+	   DLF
+
+	CTS HYD
+	   DLF
+	CTS BLR
+
+Relationships
+--------------
+1 PG --> Many G
+1 G ---> 1 PG
+
+1 G --> Many SG
+1 SG--> 1 G
+
+Subgroups are stored as Composite Key
+
+G1
+  SG1 (G1SG1)
+  SG2 (G1SG2)
+
+G2
+  SG2 (G2SG2)
+  SG3 (G2SG3)
+
+1 G --> Many Class
+1 Class --> 1 Group
+
+Class are stored as Composite Key
+
+G1
+ CS1 (G1CS1)
+ CS2 (G1CS2)
+
+G2
+ CS1 (G2CS1)
+ CS3 (G2CS3)
+  
+you need manually map class with the Subgroup	
+
+Normally
+--------
+1 Plan --> Many Products
+1 Product --> Many Plans
+
+Under a Class/Plan level
+
+1 Plan --> 1 Product
+1 Product --> Many Plans
+
+G1
+  CS1 (G1CS1)
+	MedPln --> MedProd  (it is a drop down option)
+	DntPln --> DntProd1
+	VisPln --> VisProd1
+  CS2 (G1CS2)
+	MedPln2 --> MedProd
+	DntPln  --> DntProd2
+	VisPln2 --> VisProd1
+G2
+  CS2 (G2CS2)
+  CS3 (G2CS3)
+
+Product
+-------
+
+All do's and dont's, rules and regualation, what is covered/excluded/logic for claims processing -->
+Configured in the Product
+
+4 different functions within the Product
+-----------------------------------------
+1) Indicative --> Application Type (Medical, Dental, Vision, CDH..etc)
+	          under this we have check boxes
+		   UM
+	           PrePricing
+		   Claims Processing
+		   Pre-determination
+
+2) Business Info --> Map LOB --> Product
+
+	             Max 2 LOB can be mapped to a Product
+		     1) Standard Scenarios (Primary LOB)
+		     2) Exceptional/violation Scenarios (Secondary LOB)
+			  	UM violation
+			        OON
+				UM violation (or) OON
+				UM violation (and) OON
+
+Line Of Business (which we create in the accounting group)
+Track the income and expense and identify the profit/loss
+
+3) Benefit Components (Static in Nature - remain the same for all member and Claim scenario)
+
+	100+ Benefit components mapped to a product. The mandatory components are decided based on the check 	box options choosed in the Indicative section.
+
+    1) DUMD (Duplicate Claim Rule Medical)
+	
+	Service Code
+	DOS
+	Member details
+        Provider
+	Procedure Code
+	Diagnosis Code
+	Revenue Code (for Hospital Claim)
+	Total Charge
+		
+Exact match --> Deny the claim. Claims will be processed successfuly, but the Benefit Amount =0
+Mandatory Explanation code  (Justification Reason)
+
+Possible match --> Warning message will be generated and the claim will proceed for further processing.
+
+    DUUM (Duplicate UM rules) ==> To identify duplicate Pre-auth/referal request
+	
+    AIAI (PCP Require)
+    CBCB (CoOrdination of Benefit)
+
+4) Variable Component (behave different for each member/claim scenario)
+
+	3 Variable Components
+	----------------------
+	Service Payment (SEPY)  --> Indirectly define Copay/Coinsurance
+	Limit (LTLT)		--> Max limit for a service
+	Deductible (DEDE)	--> Individual Member level/Family Level
+	     
+   These components vary based on 3 factors
+
+	1) Provider Status
+	 PCP
+	 Specialist
+	 Participating
+	 Non Participating/OON
+
+	PCP -- $5, No Ref, No auth
+	Specialist -- $10
+	Participating -- $50
+	OON   -- $100
+
+	2) Referal Status
+
+	For PCP  --> Referral is not required
+	Specialist --> required
+
+	Not Required
+	Required
+	 Obtained (follow)
+	 Violated 
+
+	3) Pre-Auth Status
+
+	Not Required
+	Required
+	 Obtained (follow)
+	 Violated 
+
+
+Provider Types
+----------------
+Practitioner (Physicians/doctors)
+Facility (Hospital)
+Provider Group (Practitioner and Facility)
+IPA (Practitioner, Facility and Provider Group)
+
+
+Hierarchy
+----------
+IPA
+Provider Group
+Practitioner/Facility
+
+participating/in-n/w ==> they have an agreement with the IC
+
+Provider Group ==> Set of Providers join together and form a group (Practitioner and Facility)
+
+IPA ==> Practitioner/PG/Hospital
+IC will have tie up with the IPA
+
+Agreement --> What are the services, POS, cost for each service
+So the pricing (the allowed amount) will be derived.
+
+Network - Collection of Providers
+Network Set - Collection of Network group -- Superset of all networks
+
+Network Set will be mapped to the class/plan definition 
+In product level the benefits is same for all these provider in these Networks, hence mapping the Network set in class/plan definition.
+
+
+CHNNW  
+   Devansish -- Provider
+   Tanish -- Provider
+
+BLRNW
+
+   Petchi -- Provider
+   Vignesh -- Provider
+
+HYDNW
+   Apeksha -- Provider
+   Nishanth -- Provider
+
+NWSet
+------
+BLRNW
+CHNNW
+
+we receive a claim C1 from Petchi -- it is IN n/w
+we receive a Claim C2 from Apeksha -- it is OON
+
+Practitioner
+	Creation of Practitioner is a 2 step Process
+	Common Practitioner  ==> Static/Identifying infor
+				  Name
+				  DOB
+				  Gender
+				  Qualification
+	Practitioner  (All other Information will be tagged)
+
+	1 CP --> Many Practitioner
+			* Multiple Specialities 
+			* Multiple Practice Address
+			* Multiple Tax ID
+			* Multiple IPA/PG
+
+
+Facets Naming Convention
+-------------------------
+CMC_GRGR_GROUP 
+
+CER -- System 
+CMC -- Managed Care/Transactional
+CDS -- Reporting
+CCS -- Customer Service
+NWX -- NetworX
+FHG -- HIPAA GATEWAY
+
+CUSTOM DB OBJECTS (Client Specific) - 1st qualifier will be the client name
+					EMBT_
+					TMGSP_
+
+2nd qualifier -- 4 byte nemoics ==> Information that is stored or the data that is processed using the object
+
+Facets 5.6 Version
+
+_CK (Contrive Key)
+
+Application Support Application Group
+--------------------------------------
+
+maintain specific type of information that Facets displays as selection in various other appln groups
+
+it acts as a central library that provides standard industry codes as well as user defined codes which are
+used throughout Facets.
+
+Procedure Code
+Diagnosis Code
+Revenue Code
+
+
+Service Code
+
+Procedure Code
+---------------
+eg: Procedure Code  = 99215
+    Effective Date  = 01/01/2023
+
+In Claims Processing, we cannot use this procedure Code for any claims submitted before 01/01/2023
+
+On or after the effective date, the procedure code can be used for claims processing.
+
+    Effective Date = Blank in the front end (01/01/1753)
+
+	I can use this procedure code for any dated claim, when eff and term date is blank.
+
+Action
+    NA - Not applicable
+    E  - Error, any claim line item with this procedure code will be ending in Error.
+    W  - Warning, any claim line item with this procedure code will be generating a warning message
+    D  - Deny, Any claim line item with this procedure code will be denied. (Claim process is successful but 		the benefit amount is 0) Explanation code is mandatory 
+
+
+Procedure code is 5 byte	
+
+Modifier ==> used to add variation to the procedure code --> 2 byte (alphanumeric)
+
+claims processed with only Procedure code then Proc code will be 5 digits
+Claims Processed with Procedure Code + Modifier then Proc Code will be 7 digits 
+
+SELECT * FROM CMC_IPCD_PROC_CD
+
+Diagnosis Code
+---------------
+
+eg: Diagnosis Code  = 417
+    Effective Date  = 01/01/2023
+
+In Claims Processing, we cannot use this Diagnosis Code for any claims submitted before 01/01/2023
+
+On or after the effective date, the Diagnosis code can be used for claims processing.
+
+    Effective Date = Blank in the front end (01/01/1753)
+
+	I can use this Diagnosis code for any dated claim, when eff and term date is blank.
+
+Action
+    NA - Not applicable
+    E  - Error, any claim line item with this Diagnosis code will be ending in Error.
+    W  - Warning, any claim line item with this Diagnosis code will be generating a warning message
+    D  - Deny, Any claim line item with this Diagnosis code will be denied. (Claim process is successful but 		the benefit amount is 0) Explanation code is mandatory 
+
+SELECT * FROM CMC_IDCD_DIAG_CD
+
+Revenue Code
+------------
+SELECT * FROM CMC_RCRC_RC_DESC
+
+EXPLANATION CODES
+-----------------
+System Reserved Explanation COdes will be used for all in built logic which comes along with the Product.
+
+Naming convention for Explanation Codes
+----------------------------------------
+
+-- C D P N U T S
+-- lower case alphabets
+-- Numbers
+
+"S" -- Subscriber/member
+select * from CMC_EXCD_EXPL_CD
+
+User Defined Codes (MCTR)
+--------------------------
+Values created specific to a client
+Same drop down but the drop down values differ based on the client requirements
+Everything goes based on Category and type
+
+select * from CMC_MCTR_CD_TRANS
+
+User Warning Message Description
+---------------------------------
+Goes based on Record type (eg: IPCD - Procedure code)
+
+SELECT * FROM CMC_WMUD_USER_MSG
+
+Place of Service
+-----------------
+2 char no:
+SELECT * FROM CMC_PSCD_POS_DESC
+
+Hospital Bill Code Definition
+-----------------------------
+
+SELECT * FROM CMC_HBCD_BILL_DESC
+
+Parent Group
+
+Trizetto Communication System (earlier it was LMS (Letter Management System))
+
+select * from CMC_PAGR_PARENT_GR
+
+The group is active in the legacy system from 01/01/2020
+and the data is moved from the legacy system to Facets on 01/01/2023
+
+Conversion Date: 01/01/2023
+Effective Date: 01/01/2020
+
+SELECT * FROM CMC_GRGR_GROUP WHERE GRGR_ID ='TRNSEPG1'
+
+SELECT PAGR.PAGR_ID, PAGR.PAGR_NAME 
+FROM CMC_PAGR_PARENT_GR PAGR,
+     CMC_GRGR_GROUP  GRGR
+WHERE PAGR.PAGR_CK = GRGR.PAGR_CK AND
+GRGR.GRGR_ID = 'TRNSEPG1'
+
+Subgroup
+--------
+Accept accumulator transfers
+	Yes --> It overrides the group selection
+	No --> It never allows accum transfer even though the group allows
+SELECT * FROM CMC_SGSG_SUB_GROUP
+
+SELECT SGSG.SGSG_ID, SGSG.SGSG_NAME
+FROM
+CMC_GRGR_GROUP GRGR,
+CMC_SGSG_SUB_GROUP SGSG
+WHERE GRGR.GRGR_CK = SGSG.GRGR_CK
+AND GRGR.GRGR_ID = 'TRNSEPG1'
+
+Class (belongs to Medical Plan domain)
+-----
+
+Order of Configuration --> Plan, Product and then Class/plan definition
+
+select * from CMC_PLDS_PLAN_DESC
+
+Class/Plan Definition
+
+TPCT Prefix (Procedure, Revenue, Service Code Conversion prefix) --> It is mandatory for medical product
+
+SELECT CSCS.CSCS_ID, CSCS.CSCS_DESC
+FROM CMC_GRGR_GROUP GRGR,
+	CMC_CSCS_CLASS CSCS
+	WHERE GRGR.GRGR_CK = CSCS.GRGR_CK
+AND GRGR.GRGR_ID = 'TRNSEPG1'
+
+Stop Age/Waiting Period
+-----------------------
+
+Waiting Period --> Start of the coverage of the member within the policy
+Stop Age --> End date of Coverage of the member within the policy
+
+This is an important parameter to be considered while processing the claims
+
+Covering Provider --> Provider who covers in absence
+
+Covered members (available in three diff applications)
+The first occurence is class plan definition, this is only for informational purpose and not affecting any
+processing logic
+
+Rate Guarantee --> Rate remains same for certain time frame without any changes
+
+Normal -- 5, Every yr increment by 5
+
+2020 - 5
+2021 - 10
+2022 - 15
+2023 - 20
+
+Rate Guarantee -- 24 months - only once,Every yr increment by 5
+
+2020 - 5
+2021 - 5
+2022 - 10
+2023 - 15
+2024 - 20
+
+Rate Guarantee -- 24 months continous,Every yr increment by 5
+
+2020 - 5
+2021 - 5
+2022 - 10
+2023 - 10
+2024 - 15
+2025 - 15
+
+Hedis Break
+-------------
+Maximum no: of break in a policy
+
+eg: Member Joins policy eff Jun 1
+
+Jul 15 -- Moved out of the policy
+
+Aug 15 -- Rejoins the policy will eff date as Aug 15th
+
+July 15 to Aug 15 --> No Coverage
+
+select * from CMC_CSPI_CS_PLAN 
+
+Stop Age and Waiting Period
+------------------------------'
+
+The start age and End age of a coverage of a member is determined based on this configuration which inturn
+determines the eligibility of the member.
+
+Format of the Description --> Subscriber Stoppage/Spouse Stopage/DependentChild Stoppage/Student details WP
+
+65/65/26/20 10D WP
+
+Waiting Period (start of the coverage)
+---------------------------------------
+
+New Employee WP = 0 (means there is no waiting period)
+Effective date = Coverage date
+01/01/2023 = 01/01/2023
+
+WP = 10 days
+
+WP start --> Hire date (emp date)
+	 --> Plan Eff date
+	 --> Member eff Date (01/01/2023)
+
+WP End (Coverage begin) --> Next day following End of WP (01/11/2023)
+		        --> 1st of month following End of WP (02/01/2023)
+
+
+Stop Age (End of Coverage)
+--------------------------
+
+Subscriber
+Spouse
+Dependent Child
+Student
+
+Birth Date: 01/01 
+Subscriber Stop Age: 65
+
+Actual Bday: 01/01/2022 65th age crossed
+	     which means they will have coverage till 12/31/2021
+	     for actual bday alone there is a grace period given
+		eg: 10 days -- 01/10/2022
+
+End of Birth month in which Bday Falls: 01/31/2022
+
+End of Calendar year in which Bday Falls: 12/31/2022
+
+GPAI (Group Preventive Administrative Information)
+
+select * from CMC_GPAI_GRP_ADM
+
+SELECT * FROM CMC_NWST_NET_SET
+
+SELECT CSPI.CSCS_ID, CSPI.CSPI_ID, CSPI.CSPD_CAT, CSPI.CSPI_EFF_DT, CSPI.PDPD_ID, CSPI.GPAI_ID
+FROM CMC_GRGR_GROUP GRGR,
+CMC_CSPI_CS_PLAN CSPI
+WHERE GRGR.GRGR_CK = CSPI.GRGR_CK
+AND GRGR.GRGR_ID = 'TRNSEPG1'
+
+PRODUCT
+-------
+
+select * from CMC_PDDS_PROD_DESC WHERE PDPD_ID = 'TRSEPPRD' -- pRODUCT INDICATIVE
+SELECT * FROM CMC_PDPD_PRODUCT WHERE PDPD_ID = 'TRSEPPRD' -- BUSINESS INFOR
+
+AIAI		Mbr		Claims
+
+-------------------------------------------
+ 
+Y		N		Error
+
+Y		Y		Successful
+
+N		Y		Successful as if no PCP
+
+N		N		Successful
+ 
+ 
+Service Payment (SEPY) 
+
+	Copay
+
+	Coinsurance
+
+DEDE - Ded
+ 
+ 
+Limit
+ 
+VC varies based on
+ 
+4 Provider Status
+
+	PCP
+
+	Specialist / Network 
+
+	Participating
+
+	Non Par / OON
+
+3 Pre Auth Status
+
+	Not Required
+
+	Obtained
+
+	Violated
+
+3 Referral Status
+
+	Not Required
+
+	Obtained
+
+	Violated
+ 
+ 
+Tier 1 Type Standard
+ 
+Under single tier type combination, max 36 possible VC rows can be created
+  
+Top to Bottom, Left to Right
+
+AIAI - Administrative Information
+-----
+PCP is required or Not
+Process Zero Charges Claims
+Member level COB
+Timely Filling Claims Acceptance Criteria
+Drag Provision
+Processing Exceptions
+
+Low date of Service --> Treatment start date
+High Date of Service --> Treatment End Date
+
+SELECT * FROM CMC_AIAI_ADM_INFO WHERE PDBC_PFX = 'AI01'
+SELECT * FROM CMC_PDBC_PROD_COMP WHERE PDPD_ID = 'TRNAPRPD'
+
+ARAR - Administrative Rule, Medical
+-----------------------------------
+
+Define whether Primary Diagnosis code is required or not
+Define the Pre-auth timelines
+
+DUUM -- Duplicate UM Rules
+--------------------------
+confinement --> INpatient Services
+Services ---> Outpatient Services
+
+DUMD -- Duplicate Claims Rule, Medical
+--------------------------------------
+Exact Duplicate
+Possible Duplicate
+
+CBCB -- Co-ordination of Benefit
+---------------------------------
+Defines whether Claim level COB is required or not
+
+WMWM (Warning Message)
+----------------------
+Trizetto Supplied warning messages.
+
+WMUD (User Warning Message)
+---------------------------
+
+Grouping Multiple user defined warning messages having different record types under one header or prefix
+
+proj1: 0001
+	SBSB: 0006,0009
+        MEME: 0004,0005
+
+Proj2: 
+	SBSB: 0002,0001
+	CLCL: 0089,0076
+
+SELECT * FROM CMC_ARAR_CERT_RULE WHERE PDBC_PFX = 'AR01'
+
+SELECT * FROM CMC_PDBC_PROD_COMP WHERE PDPD_ID = 'TRNAPRPD'
+
+SELECT * FROM CMC_DUUM_DUP_EDIT 
+SELECT * FROM CMC_DUMD_DUP_EDIT
+SELECT * FROM CMC_WMWM_WARN_MSG
+SELECT * FROM CMC_WMUD_USER_MSG
+SELECT * FROM CMC_CBCB_COB
+
+Variable Components
+--------------------
+
+Type: Standard and Tier:1 is mandatory
+
+for a single tier type combination we can have 36 variable components
+
+SELECT * FROM CMC_SEPY_SE_PYMT
+SELECT * FROM CMC_LTLT_LIMIT
+SELECT * FROM CMC_DEDE_DEDUCT
+SELECT * FROM CMC_PDVC_VAR_COMP WHERE PDPD_ID = 'TRNAPRPD'
+
+PROVIDER
+--------
+Practictioner (P)
+Facility (F)
+Provider Group (G)
+IPA (I)
+
+All the provider information is stored in a single table CMC_PRPR_PROV
+
+PRPR_ENTITY (Identifies the type of Provider)
+
+Common Practitioner record -- CMC_PRCP_COMM_PRAC
+
+Practitioner (P)
+	Common Prac (PRCP) -> Static / Identifying Info abt Provider -> Name, DOB, Age, Edu Quali, Gender
+	Prac 
+
+	1 CP -> Many Prac
+
+		Multiple Speciality
+		Multiple Tax ID
+		Part of More than 1 IPA at the same / more than 1 PG at the same
+		Multiple Practice Address
+
+Credentialing - PRCR
+	Prac, PRCR_ID = PRCP_ID
+	others, PRCR_ID = PRPR_ID
+
+Provider Address - PRAD
+Mandatory for a provider to have 2 address.
+
+	Mand - 1 Primary and 1 Remittance Addd
+	
+	PRAD_ID = PRPR_ID
+
+PRAD table:
+============
+PRAD_ID  PRAD_TYPE   ADD1  ADD2  CITY STATE ZIP
+-------------------------------------------------
+PRPR1    PRI	     123   SEC   SC
+PRPR1    PR2         345   TEST  SC
+
+PRPR table:
+=============
+PRPR_ID    PRPR_ENTITY  PRAD_TYPE_PRIM     PRAD_TYPE_CHK
+----------------------------------------------------------
+PRPR1       P           PRI		   PR2
+
+PRER (provider Entity Table) --> Association of all the individual providers being part of any PG/IPA
+
+Scenario: 1
+PG1 --> PRAC1, FAC1
+
+PRPR table
+----------
+PRPR_ID      PRPR_ENTITY
+------	     ------------
+PG1		G
+PRAC1		P
+FAC1		F
+
+PRER table
+----------
+PRER_PRPR_ID	 PRER_PRPR_ENTITY   PRPR_ID
+------------------------------------------------
+PG1		 G		    PRAC1
+PG1		 G		    FAC1
+
+For Facility (PRFA)
+
+3 Extra fields will be stored in PRFA
+
+Avg room rate, AFA Number, AHA Number
+
+NETWORK PROVIDER TABLE (NWPR)
+-----------------------------
+This table is going to hold the information of which all network a particular provider belongs to
+
+NWPR TABLE:
+============
+PRPR_ID	  NWNW_ID    NWPR_PFX   PCP   AGAG_ID
+-------------------------------------------------
+PRAC1	  CHNNW	      PPO	 Y	  AG01
+PRAC1     CBENW       HMO        N        AG02
+PRAC1     CHNNW       PPO        N        AG03     
+
+To identify the provider status we need NWST
+
+Network Set (NWST) table
+--------------------------
+
+NWNW_ID     NWPR_PFX	STATUS	 TIER
+--------------------------------------
+CHNNW	     PPO         I       1
+BLRNW	     POS         I	 1
+CBENW        PPO         I	 1
+HYDNW        HMO         P	 2
+
+To identify the provider status, we need to compare NWPR and NWST tables
+
+Comparison Logic
+------------------
+Compare NWNW_ID + NWPR_PFX from NWST with NWNW_ID + NWPR_PFX from NWPR
+	If Match Exists Then
+		If the status Ind from Matching row of NWST Table is 'I' then
+			Provider in the claim is INN Provider
+				If PCP Ind of matching row from NWPR Table is 'Y' and if the provider is added/mapped as Mbr's PCP during enrollment then
+					Provider in the claim is "PCP" Provider
+				Else
+					Provider in the claim is "Specialist" Provider
+
+
+		Else if the status Ind from Matching row of NWST Table is 'P' then
+			Provider in the claim is "Participating" Provider
+	Else
+		Provider in the claim is "OON" Provider
+
+OON Provider -- NPPR
+C07000001101
+
+Tax information 
+----------------
+
+MCTI -- will give which provider is mapped to which Tax ID
+MCTN -- will give the Name and Address details
+
+SELECT * FROM CMC_MCTI_TAX_INFO WHERE MCTI_ENTY_ID = 'C07000001101'
+SELECT * FROM CMC_MCTN_TAX_NAME WHERE MCTN_ID = '845367851'
+
+
+SELECT * FROM CMC_PRCP_COMM_PRAC WHERE PRCP_ID = 'C07000001'
+
+SELECT * FROM CMC_PRAD_ADDRESS WHERE PRAD_ID = 'C07000001101'
+
+SELECT * FROM CMC_PRPR_PROV WHERE PRPR_ID = 'C07000001101'
+
+
+SELECT * FROM CMC_MCTI_TAX_INFO WHERE MCTI_ENTY_ID = 'C07000001101'
+SELECT * FROM CMC_MCTN_TAX_NAME WHERE MCTN_ID = '845367851'
+
+SELECT * FROM CMC_NWST_NET_SET
+SELECT * FROM CMC_NWPR_RELATION WHERE PRPR_ID = 'C07000001101'
+
+SELECT * FROM CMC_PRER_RELATION WHERE PRPR_ID = 'C07000001101'
+
+SELECT * FROM CMC_PRER_RELATION WHERE PRER_PRPR_ID = 'C07PG0000001'
+
+SELECT * FROM CMC_PRCR_CREDEN WHERE PRCR_ID = 'C07000001'
+
+SELECT * FROM CMC_PRFA_FACILITY

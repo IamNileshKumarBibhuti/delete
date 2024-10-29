@@ -1,0 +1,163 @@
+
+
+
+(table)CSPI(CSPI_ID, GRGR_CK, CSCS_ID , CSPD_CAT, PDPD_ID , GPAI_ID)
+
+(table)GRGR(GRGR_CK, PAGR_CK ,CICI_ID, GRGR_ID, PAGR_CK)
+
+(table)SGSG(SGSG_CK, GRGR_CK, SGSG_ID)
+
+(table)PDDS(PDPD_ID)
+
+(table)PDPD(PDPD_ID, LOBD_ID)
+
+(table)PDBC(PDPD_ID, PDBC_TYPE, PDBC_PFX)
+
+(table)AIAI(PDBC_PFX) ---------------------(DEAD END)
+
+(table)PDVC(PDPD_ID, PDVC_TYPE)
+
+(table)SEPY(SEPY_PFX, SESE_ID)
+
+(table)SESE(SESE_ID)
+
+(table)SBAD(SBSB_CK)
+
+(table)SETR(SESE_ID)
+
+(table)SBSB(SBSB_CK, GRGR_CK)
+
+(table)SBWM(SBSB_CK)
+
+(table)SBSG(SBSB_CK)
+
+(table)SGCS(SGSG_CK, CSCS_ID)
+
+(table)SBCS(SBSB_CK)
+
+(table)CSCS(CSCS_ID, GRGR_CK, TPCT_PFX)
+
+(table)SBEL(SBSB_CK)
+
+(table)MEEL(MEME_CK)
+
+(table)MEME(MEME_CK, SBSB_CK)
+
+(table)MECB(MEME_CK)
+
+(table)MCRE(MCRE_ID)
+
+(table)MEPR(MEME_CK)
+
+(table)MEPE(MEME_CK, CSPD_CAT)
+
+(table)MEST(MEME_CK)
+
+-----------------------------------------------------------------
+
+(table)PRCP(PRCP_ID)
+
+(table)PRAD(PRAD_ID)
+
+(table)PRPR(PRPR_ID, PRCR_ID, PRCP_ID, PRAD_ID)
+
+(table)MCTN(MCTN_ID)
+
+(table)MCTI(MCTI_ID)
+
+(table)PRDS(PRPR_ID)
+
+(table)PRER(PRPR_ID)
+
+(table)PRFA(PRPR_ID, PRCR_ID)
+
+(table)PRCR(PRCR_ID)
+
+(table)AGAG(AGAG_ID)
+
+(table)NWNW_ID(NWNW_ID)
+
+(table)NWST(NWST_PFX, NWNW_ID, NWPR_PFX)
+
+(table)NWPR(NWPR_PFX, PRPR_ID, NWNW_ID, AGAG_ID)
+
+(table)NWPE(NWPE_PFX, PRPR_ID, NWNW_ID)
+
+(table)NWCR(NWCR_PFX, NWNW_ID)
+
+------------------------------------------------------------------------------
+
+(table)SEDS(SESE_ID)
+
+(table)SEDF(SESE_ID, PDBC_PFX)
+
+(table)SESE(SESE_ID)
+
+(table)CLCL(CLCL_ID, MEME_CK, GRGR_CK, SBSB_CK, PRPR_ID, CSPD_CAT, CSCS_ID, CSPI_ID, PDPD_ID )
+
+(table)CDML(CLCL_ID, MEME_CK, LOBD_ID, PRPR_ID, IDCD_ID, PSCD_ID, SESE_ID)
+
+(table)PSCD(PSCD_ID)
+
+(table)LOBD(LOBD_ID, PYPY_ID)
+
+(table)IDCD(IDCD_ID)
+
+(table)PYPY(PYPY_ID)
+
+-----------------------------------------------------------------------------
+
+(table)CLCK(CLCL_ID, LOBD_ID,  CKPY_REF_ID, SBSB_CK, MEME_CK, PRPR_CK)
+
+(table)CKPY(CKPY_REF_ID, LOBD_ID)
+
+(table)ACPR(ACPR_REF_ID, LOBD_ID)
+
+(table)BPID(PYPY_ID, LOBD_ID, CKPY_REF_ID)
+
+(table)GPAI(GPAI_ID)
+
+(table)MEHD(MEME_CK)
+
+(table)PYBA(PYBA_ID)
+
+(table)ACRH(ACPR_REF_ID)
+
+(table)CLOV(CLCL_ID, LOBD_ID)
+
+-------------------------------------------------------------------------------------
+
+
+(table)EXCD(EXCD_ID, PDBC_PFX)
+
+(table)PSCD(PSCD_ID)
+
+(table)PAGR(PAGR_CK)
+
+(table)NPPR(PRPR_ID, PDBC_PFX)
+
+(table)CLST(CLCL_ID)
+
+(table)CDOR(CDML_SEQ_NO)
+
+(table)CLPR(CLCL_ID)
+
+(table)CLME(CLCL_ID)
+
+(table)CLHP(CLCL_ID)
+
+-------------------------------------------------------------------------------------
+
+(table)CLID(CLCL_ID)
+
+(table)IPCD(IPCD_ID)
+
+(table)TPCT(TPCT_PFX, SESE_ID)
+
+(table)SPCT(PDBC_PFX, SESE_ID)
+
+(table)SRCT(PDBC_PFX, SESE_ID )
+
+(table)IPMC(PDBC_PFX)
+
+-----------------------------------------------------------------------------------------

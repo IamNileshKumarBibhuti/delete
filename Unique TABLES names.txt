@@ -1,0 +1,111 @@
+PAGR	->	Parent Group
+GRGR	->	Group 
+
+
+
+SGSG	-> 	Sub Group
+SGCS	->	Sub Group Class
+
+
+
+AIAI	->	Administrative Information
+GPAI	->	Stop Age & Waiting Period
+
+
+
+LOBD	->	Line of Business
+PSCD	->	Place of Service Description
+IPCD	->	Procedure Code
+IDCD	->	Diagnosis Code
+EXCD	->	Explanation Code
+
+
+
+CSCS	->	Class discription
+CSPD	->	Class Prdouct 
+CSPI	->	Class Plan Definition
+
+
+
+PDPD	-> 	Product
+PDDS	->	Product Description
+PDBC	->	Product benifit component 
+PDVC	->	Product variable component
+
+
+
+SESE	->	Service
+SEPY	->	Service Payment
+SEDF	->	Service Definition
+SEDS 	->	Service Description
+SETR	->	Service Tier
+
+
+
+SBSB	->	Subscriber	
+SBEL	->	Subscriber Eligibility
+SBSG	->	Subscriber Sub group
+SBWM	->	Subscriber Warning Messages
+
+
+
+MEME	->	Member
+MEHD	->	Member Handicap Status
+MEPE	->	Member Eligibility 
+MEST	->	Member Student Eligibility 
+MECB	->	Member Coordination Benefit
+MEPR	->	Member Provider PCP History
+
+
+
+PRPR	->	Provider
+PRCP	->	Provider Common Provider
+PRAD	->	Provider Address
+PRCR	->	Provider Creadentialing 
+PRER	->	Provider Entity Relationship
+PRFA	->	Provider Facility
+AGAG	->	Provider Aggrement
+
+
+
+MCTN	->	Tax name
+MCTI	->	Tax information for Providers
+
+
+NWST	->	Network set  
+NWNW	->	Provider Network	 
+NWPR	->	Praticipating Provider
+NPPR	->	Praticipating Provider Aggrement
+NWPE	->	PCP Capitation relation        
+NWCR  ->	Network Capitation relation
+
+
+
+CLCL	->	Claim
+CLST	->	Claim Status
+CDML	->	Claim Line
+CDOR	->	Claim Line Override Data
+CLOV	->	Claim Overpay
+CLCK	->	Claim Check
+CLPR	->	Claim Provider
+CLHP	->	Claim Hospital (UB04)
+
+
+	
+PYPY	->	Payor
+PYBA	->	Payor Bank Account
+CKPY	->	Payment		
+ACPR	->	Payment Reduction
+ACRH	->	Payment Reduction History
+
+
+
+
+TPCT	->	Service Procedure Conversion
+SPCT	->	Supplementel Procedure Conversion
+SRCT	-> 	Supplementel Revenue Conversion
+
+
+
+
+

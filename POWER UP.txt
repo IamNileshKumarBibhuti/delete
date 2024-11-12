@@ -1,0 +1,575 @@
+
+
+
+
+(1)
+SELECT 	IDCD.IDCD_ID, 
+		IDCD.DESC, 
+		IDCD.EFF_DT, 
+		IDCD.TERM_DT 
+
+FROM 		CMC_IDCD_DIAG_CD 			IDCD
+
+WHERE		IDCD_ID = 'J10'			AND
+		IDCD.EFF_DT <= GETDATE() 	AND 		IDCD.TERM_DT >= GETDATE();
+
+
+
+
+
+(2 -imp)
+_ID,  _MCTR, _EFF , _TERM 	  IDCD
+
+_DESC LIKE '%VISION%' 
+
+
+
+
+
+(3 -imp)
+SELECT _ID, _TYPE, EFF_DT, TERM_DT  
+
+
+FROM IDCD
+
+
+WHERE 
+	_TYPE = 'T-10' , 'I-9' , 'D-NON STANDARDS'
+	IDCD.EFF_DT <= GETDATE() 	AND 		IDCD.TERM_DT >= GETDATE();
+
+
+
+
+
+(4 -imp)
+SELECT _ID, _SHORT_DESC
+
+FROM EXCD
+
+WHERE 
+	EXCD_STS = 'S - SUBSCRIBER|MEMBER' , 'P - PROVIDER'
+
+
+
+
+
+(5 -imp)
+SELECT _ID, _DESC  
+
+FROM PSCD
+
+WHERE 
+	PSCD_POS_IND = 'O - OUTPATIENT'  ,  'I - INPATIENT'
+
+
+
+
+(6 -imp)
+SELECT _ID , _NAME 
+
+FROM GRGR , SGSG
+
+NOTE :- PAGR = GRGR.PAGR_CK 
+  
+	  GRGR = SGSG.GRGR_CK
+
+WHERE
+	GRGR = SGSG.GRGR_CK	AND
+	GRGGR_ID = 'C07G0002'
+
+
+
+
+
+(7)
+
+_BILL_LEVEL 	GRGR
+
+
+
+
+(8)
+SELECT _NAME , _CICI_ID 
+
+FROM PAGR, GRGR
+
+WHERE 
+	PAGR = GRGR.PAGR_CK	AND
+	GRGR_ID = 'C07G0002'
+
+
+
+(9)
+SELECT GR_ID , GR_NAME 
+
+FROM GRGR , PAGR
+
+WHERE 	
+	PAGR = GRGR.PAGR_CK	AND
+	PAGR_CK = 1
+
+
+
+
+(10)
+SELECT PDBC_TYPE ,PDBC_EFF_DT , PDBC_TERM_DT
+
+FROM PDBC
+
+WHERE 
+	PDBC.PDPD_ID = 'C07PPP01'
+	PDBC_EFF_DT <= GETDATE()	AND		PDBC_TERM_DT >= GETDATE()
+
+
+
+(11)
+_ID, LOBD_ID, EFF_DT, TERM_DT 	PDPD
+
+WHERE PDPD.PDPD_ID = 'C07PPP01'
+
+
+
+(12) 
+SELECT 
+	_ID, _TIER , _SEPY, _PC_NR, _PC_OBT, _PC_VOIL, EFF_DT, TERM_DT 
+
+FROM PBVC 
+
+WHERE 
+	PDPD_ID = 'C07PPP01'					AND
+	PDVC_PR_PAR = 'Y'						AND
+	
+	PDVC_TIER = 1						AND
+	PDVC_TYPE = ' ' KOI BHI HOSHAKTA HAI 		AND
+	
+	( _EFF_DT <= GETDATE() 	AND 	_TERM_DT >= GETDATE()  );
+
+
+
+(13)
+SELECT 
+	CSPI.AGE_CAL , 
+	CSCS._ID , 
+	CSCS._DESC
+
+FROM 
+	GRGR , 
+	CSCS , 
+	CSPI
+
+WHERE
+	GRGR = CSCS.GRGR_CK
+	CSCS = CSPI.CSCS_ID
+	CSPI._ID = 'C07PPOA'
+	GRGR._ID = 'C07G0002'
+
+
+
+(14 -imp)
+SELECT 
+	GPAI._ID, 
+	CSCS._DESC
+	CSPI._EFF_DT
+	CSPI._TERM_DT
+
+FROM 
+	GPAI 
+	CSCS 
+	CSPI
+
+WHERE 
+	GPAI = CSPI.GPAI_ID	AND
+	CSCS = CSPI.CSCS_ID 	AND
+	GRGR._CK = 1		AND
+	CSCS._ID = 'C071'		AND
+	CSPI._ID = 'C07PPOA'
+
+
+
+(15)
+SELECT CSCS.ID , CSCS.DESC
+
+FROM 
+	CSCS
+	GRGR
+WHERE
+	GRGR = CSCS.GRGR_ID
+	GRGR._ID = 'C07G0002';
+
+
+
+
+
+(16 -imp) 
+SELECT
+	PRAD_ID , _ADDRESS1 , _CITY, _STATE , _ZIP
+
+FROM 
+	PRPR, 
+	PRAD
+
+WHERE
+	PRAD = PRPR.PRAD_ID  (WOW)
+
+
+
+(17 -imp)
+SELECT PRPR_ID , PRPR_NAME , NWNW_ID , NWPR_PFX
+
+FROM 
+	PRPR
+	NWPR
+
+WHERE
+	PRPR = NWPR.PRPR_ID  (WOW)
+
+
+
+(18 -imp)
+SELECT PRPR_ID , PRER_ENTITY , EFF_DT , TERM_DT 
+
+PRPR , PRER
+
+WHERE 
+	PRPR = PRER.PRPR_ID
+	PRPR_ID = 'C07000001101'
+
+
+(19 -imp)
+
+GRGR, NWPR, NWST , CSPI
+
+FROM 
+
+WHERE
+	GRGR = CSPI.GRGR_CK  	AND
+	NWST = CSPI.NWST_PFX	AND
+	NWPR = NWST.NWPR_PFX	AND
+	NWPR_ID = NWNW_ID		AND
+	
+	NWST.NWST_PR_NW_STS = 'I -> IN NETWORK ,P -> PARTICIPATING'
+
+
+(20)
+AGAG NWPR
+
+WHERE
+	AGAG = NWPR.AGAG_ID
+	NWPR.PRPR_ID = 'C07000001101' 	AND
+	AGAG_EFF <= GETDATE() AND AGAG_TERM_DATE >= GETDATE()
+
+
+
+(21 -imp)
+SBSB SGSG GRGR
+
+
+WHERE
+	GRGR = SGSG.GRGR_CK 		AND 
+	GRGR = SBSB.GRGR_CK		AND
+	SBSB.SBSB_MCTR_STS = 'ACTI' 	AND
+
+
+NOTE :- MEPE_ELIG_IND = 'Y | N' + DATE BHI KARO CHECK  
+
+
+
+(22 -imp)
+GRGR SBSB SBCS
+
+WHERE
+	GRGR = SBSB.GRGR_CK 	AND
+	SBSB = SBCS.SBSB_CK	AND
+	SBSB_MCTR_STS = 'ACTI'
+
+
+
+	
+(23)
+SBSB GRGR SGSG SBCS SBSG
+
+
+WHERE
+	GRGR = SGSG.GRGR_CK
+
+	GRGR = SBSB.GRGR_CK
+	
+	SBSB = SBCS.SBSB_CK
+	SBSB = SBSG.SBSB_CK
+
+
+
+(24)
+SBSB MEME MEPE
+
+
+
+ 
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

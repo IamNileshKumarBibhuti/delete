@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-deepguard-light text-slate-900 dark:bg-deepguard-dark dark:text-slate-100;
+  min-height: 100vh;
+}
+
+.glass-card {
+  @apply bg-white/60 dark:bg-white/10 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+}
+
+.gradient-border {
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05)) padding-box,
+    linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(16, 185, 129, 0.55)) border-box;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

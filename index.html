@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Spire // Science Friction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="logo">Quantum <span>Spire</span></div>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#systems">Systems</a>
+      <a href="#console">Console</a>
+      <a href="#missions">Missions</a>
+      <a href="#feed">Telemetry</a>
+    </nav>
+    <button class="pill ghost">Secure Link</button>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Deep field science friction</p>
+        <h1>Shape reality through neon-grade research and impossible prototypes.</h1>
+        <p class="lede">Quantum Spire is an experimental lab interface built for tacticians, explorers, and makers who prefer their discoveries wrapped in plasma glare.</p>
+        <div class="cta-row">
+          <button class="pill primary">Engage simulation</button>
+          <button class="pill secondary">Download briefing</button>
+        </div>
+        <div class="badge-row" role="list">
+          <div class="badge" role="listitem">Phase <strong>IV</strong> Trials</div>
+          <div class="badge" role="listitem">Photon Safe</div>
+          <div class="badge" role="listitem">ISO-Cosmos Compliant</div>
+        </div>
+      </div>
+      <div class="holo-panel" aria-hidden="true">
+        <div class="orbital">
+          <div class="core"></div>
+          <div class="ring ring-a"></div>
+          <div class="ring ring-b"></div>
+          <div class="ring ring-c"></div>
+        </div>
+        <div class="holo-readout">
+          <p class="mono">Spectral density</p>
+          <div class="bars">
+            <span style="--h: 82%"></span>
+            <span style="--h: 48%"></span>
+            <span style="--h: 67%"></span>
+            <span style="--h: 92%"></span>
+            <span style="--h: 55%"></span>
+            <span style="--h: 76%"></span>
+          </div>
+          <p class="mono faint">Live channel // encrypted</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-grid" id="systems">
+      <header class="section-head">
+        <p class="eyebrow">Systems online</p>
+        <h2>Everything you need to bend science with style.</h2>
+        <p class="faint">Modular nodes combine field-ready data, visual intelligence, and tactile controls for zero-gravity decisions.</p>
+      </header>
+      <div class="grid">
+        <article class="card">
+          <p class="mono">Neuroglass HUD</p>
+          <h3>Layered overlays</h3>
+          <p>Stack signal overlays on a magnetic lattice so your discoveries stay anchored while the universe drifts.</p>
+          <span class="tag">Holography</span>
+        </article>
+        <article class="card">
+          <p class="mono">Ion Channel</p>
+          <h3>Zero-lag relays</h3>
+          <p>Pulse findings across the Helix backbone with white-hot packet tracing and adaptive shielding.</p>
+          <span class="tag">Networking</span>
+        </article>
+        <article class="card">
+          <p class="mono">Flux Lab</p>
+          <h3>Reactive sandboxes</h3>
+          <p>Instanced testbeds that shimmer with real-time heatmaps, anomaly traps, and reversible time locks.</p>
+          <span class="tag">Simulation</span>
+        </article>
+        <article class="card">
+          <p class="mono">Aether Vault</p>
+          <h3>Quantum archives</h3>
+          <p>Store volatile hypotheses in lattice-stabilized vaults with transparent provenance and radiant audit trails.</p>
+          <span class="tag">Storage</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="console" id="console">
+      <div class="console-head">
+        <p class="eyebrow">Live console</p>
+        <h2>Tune the vessel. Feel the friction.</h2>
+        <p class="faint">Adjust thrust vectors, rotate shields, and charge the core to watch the interface respond.</p>
+      </div>
+      <div class="console-body">
+        <div class="control">
+          <div class="control-head">
+            <p class="mono">Quantum Shields</p>
+            <span class="status status-soft" id="shield-status">Arming</span>
+          </div>
+          <button class="toggle" id="toggle-shield" aria-pressed="false">Toggle shields</button>
+        </div>
+        <div class="control">
+          <div class="control-head">
+            <p class="mono">Ionic Thrusters</p>
+            <span class="status" id="thruster-output">47% burn</span>
+          </div>
+          <input type="range" id="thruster" min="0" max="100" value="47" aria-label="Thruster output" />
+        </div>
+        <div class="control">
+          <div class="control-head">
+            <p class="mono">Core Charge</p>
+            <span class="status" id="core-status">Stabilizing</span>
+          </div>
+          <div class="chips" role="group" aria-label="Core charge levels">
+            <button class="chip" data-level="Low">Low</button>
+            <button class="chip" data-level="Nominal" aria-pressed="true">Nominal</button>
+            <button class="chip" data-level="Overdrive">Overdrive</button>
+          </div>
+        </div>
+        <div class="control intel">
+          <div class="control-head">
+            <p class="mono">Telemetry</p>
+            <span class="status status-soft" id="telemetry">Awaiting signal</span>
+          </div>
+          <div class="intel-grid">
+            <div class="intel-cell">
+              <p class="mono faint">Spectra</p>
+              <strong id="spectra">7.4 keV</strong>
+            </div>
+            <div class="intel-cell">
+              <p class="mono faint">Grav pulse</p>
+              <strong id="grav">0.002 g</strong>
+            </div>
+            <div class="intel-cell">
+              <p class="mono faint">Drift</p>
+              <strong id="drift">-2.4°</strong>
+            </div>
+            <div class="intel-cell">
+              <p class="mono faint">Sync</p>
+              <strong id="sync">Locked</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-grid missions" id="missions">
+      <header class="section-head">
+        <p class="eyebrow">Mission stack</p>
+        <h2>Run luminous expeditions without losing your cool.</h2>
+      </header>
+      <div class="grid">
+        <article class="card tall">
+          <p class="mono">Spectral Harvest</p>
+          <h3>Harvest auroras for power.</h3>
+          <p>Deploy filament nets across solar waves to capture charged photons and feed the core.</p>
+          <div class="meta">
+            <span class="tag">Energy</span>
+            <span class="tag">Autonomy</span>
+          </div>
+        </article>
+        <article class="card tall">
+          <p class="mono">Orbital Drift</p>
+          <h3>Chart silent anomalies.</h3>
+          <p>Pair LiDAR ribbons with nano buoy markers to map dark matter ripples around derelict stations.</p>
+          <div class="meta">
+            <span class="tag">Navigation</span>
+            <span class="tag">AI</span>
+          </div>
+        </article>
+        <article class="card tall">
+          <p class="mono">Helix Bloom</p>
+          <h3>Grow oxygen from starlight.</h3>
+          <p>Seed engineered algae into comet tails and accelerate terraforming with ultraviolet lattices.</p>
+          <div class="meta">
+            <span class="tag">Bio</span>
+            <span class="tag">Terraforming</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="feed" id="feed">
+      <div class="section-head">
+        <p class="eyebrow">Telemetry feed</p>
+        <h2>Incoming bursts from the outer bands.</h2>
+      </div>
+      <div class="feed-grid">
+        <article class="blip">
+          <p class="mono">01 // Neptune Halo</p>
+          <p>Spire-6 detected a sapphire filament folding across the station’s magnetosphere. Charge increased by 12%.</p>
+        </article>
+        <article class="blip">
+          <p class="mono">02 // Redshift Bloom</p>
+          <p>Optics pivoted to capture a cascading ruby flare. Data stitched into the vault with zero packet loss.</p>
+        </article>
+        <article class="blip">
+          <p class="mono">03 // Silent Choir</p>
+          <p>A series of sub-audible pulses echoed from the Kuiper shelf. Shields resonate; analysis underway.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="logo">Quantum <span>Spire</span></div>
+    <p class="faint">Built for explorers who like their science a little dangerous.</p>
+    <div class="pill ghost">Signal strength: <span id="signal">99.7%</span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

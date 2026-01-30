@@ -3,220 +3,478 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantum Spire // Science Friction</title>
+  <title>Neon Pantry AI // Futuristic Recipe OS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="ambient-glow" aria-hidden="true"></div>
   <div class="starfield" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
 
-  <header class="nav">
-    <div class="logo">Quantum <span>Spire</span></div>
-    <nav class="nav-links" aria-label="Main">
-      <a href="#systems">Systems</a>
-      <a href="#console">Console</a>
-      <a href="#missions">Missions</a>
-      <a href="#feed">Telemetry</a>
-    </nav>
-    <button class="pill ghost">Secure Link</button>
+  <header class="top-nav">
+    <div class="logo">
+      <span class="logo-dot"></span>
+      Neon Pantry <strong>AI</strong>
+    </div>
+    <div class="nav-actions">
+      <button class="pill ghost">Sync Profile</button>
+      <button class="pill primary">Launch Assistant</button>
+    </div>
   </header>
 
+  <section class="tab-bar" aria-label="Primary">
+    <button class="tab active" data-tab="home" aria-selected="true">Home</button>
+    <button class="tab" data-tab="recipes" aria-selected="false">Recipes</button>
+    <button class="tab" data-tab="ingredients" aria-selected="false">Ingredients</button>
+    <button class="tab" data-tab="pricing" aria-selected="false">Pricing</button>
+    <button class="tab" data-tab="services" aria-selected="false">Services</button>
+    <button class="tab" data-tab="faq" aria-selected="false">FAQ</button>
+  </section>
+
   <main>
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow">Deep field science friction</p>
-        <h1>Shape reality through neon-grade research and impossible prototypes.</h1>
-        <p class="lede">Quantum Spire is an experimental lab interface built for tacticians, explorers, and makers who prefer their discoveries wrapped in plasma glare.</p>
-        <div class="cta-row">
-          <button class="pill primary">Engage simulation</button>
-          <button class="pill secondary">Download briefing</button>
-        </div>
-        <div class="badge-row" role="list">
-          <div class="badge" role="listitem">Phase <strong>IV</strong> Trials</div>
-          <div class="badge" role="listitem">Photon Safe</div>
-          <div class="badge" role="listitem">ISO-Cosmos Compliant</div>
-        </div>
-      </div>
-      <div class="holo-panel" aria-hidden="true">
-        <div class="orbital">
-          <div class="core"></div>
-          <div class="ring ring-a"></div>
-          <div class="ring ring-b"></div>
-          <div class="ring ring-c"></div>
-        </div>
-        <div class="holo-readout">
-          <p class="mono">Spectral density</p>
-          <div class="bars">
-            <span style="--h: 82%"></span>
-            <span style="--h: 48%"></span>
-            <span style="--h: 67%"></span>
-            <span style="--h: 92%"></span>
-            <span style="--h: 55%"></span>
-            <span style="--h: 76%"></span>
+    <section class="tab-panel active" id="home" aria-labelledby="Home">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI recipe engine v4.2</p>
+          <h1>Cook in neon time. Discover recipes in an instant.</h1>
+          <p class="lede">Neon Pantry AI blends your ingredients, budgets, and cravings into a curated mission plan. Ask the assistant, explore trending recipes, and lock in the lowest ingredient prices before you shop.</p>
+          <div class="hero-actions">
+            <button class="pill primary">Generate recipe</button>
+            <button class="pill secondary">Start meal plan</button>
           </div>
-          <p class="mono faint">Live channel // encrypted</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel-grid" id="systems">
-      <header class="section-head">
-        <p class="eyebrow">Systems online</p>
-        <h2>Everything you need to bend science with style.</h2>
-        <p class="faint">Modular nodes combine field-ready data, visual intelligence, and tactile controls for zero-gravity decisions.</p>
-      </header>
-      <div class="grid">
-        <article class="card">
-          <p class="mono">Neuroglass HUD</p>
-          <h3>Layered overlays</h3>
-          <p>Stack signal overlays on a magnetic lattice so your discoveries stay anchored while the universe drifts.</p>
-          <span class="tag">Holography</span>
-        </article>
-        <article class="card">
-          <p class="mono">Ion Channel</p>
-          <h3>Zero-lag relays</h3>
-          <p>Pulse findings across the Helix backbone with white-hot packet tracing and adaptive shielding.</p>
-          <span class="tag">Networking</span>
-        </article>
-        <article class="card">
-          <p class="mono">Flux Lab</p>
-          <h3>Reactive sandboxes</h3>
-          <p>Instanced testbeds that shimmer with real-time heatmaps, anomaly traps, and reversible time locks.</p>
-          <span class="tag">Simulation</span>
-        </article>
-        <article class="card">
-          <p class="mono">Aether Vault</p>
-          <h3>Quantum archives</h3>
-          <p>Store volatile hypotheses in lattice-stabilized vaults with transparent provenance and radiant audit trails.</p>
-          <span class="tag">Storage</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="console" id="console">
-      <div class="console-head">
-        <p class="eyebrow">Live console</p>
-        <h2>Tune the vessel. Feel the friction.</h2>
-        <p class="faint">Adjust thrust vectors, rotate shields, and charge the core to watch the interface respond.</p>
-      </div>
-      <div class="console-body">
-        <div class="control">
-          <div class="control-head">
-            <p class="mono">Quantum Shields</p>
-            <span class="status status-soft" id="shield-status">Arming</span>
+          <div class="quick-search">
+            <input type="text" placeholder="Search recipes, cuisines, or dietary goals" aria-label="Quick search" />
+            <button class="pill ghost">Search</button>
           </div>
-          <button class="toggle" id="toggle-shield" aria-pressed="false">Toggle shields</button>
-        </div>
-        <div class="control">
-          <div class="control-head">
-            <p class="mono">Ionic Thrusters</p>
-            <span class="status" id="thruster-output">47% burn</span>
-          </div>
-          <input type="range" id="thruster" min="0" max="100" value="47" aria-label="Thruster output" />
-        </div>
-        <div class="control">
-          <div class="control-head">
-            <p class="mono">Core Charge</p>
-            <span class="status" id="core-status">Stabilizing</span>
-          </div>
-          <div class="chips" role="group" aria-label="Core charge levels">
-            <button class="chip" data-level="Low">Low</button>
-            <button class="chip" data-level="Nominal" aria-pressed="true">Nominal</button>
-            <button class="chip" data-level="Overdrive">Overdrive</button>
-          </div>
-        </div>
-        <div class="control intel">
-          <div class="control-head">
-            <p class="mono">Telemetry</p>
-            <span class="status status-soft" id="telemetry">Awaiting signal</span>
-          </div>
-          <div class="intel-grid">
-            <div class="intel-cell">
-              <p class="mono faint">Spectra</p>
-              <strong id="spectra">7.4 keV</strong>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="mono">Avg. generation time</span>
+              <strong>1.4s</strong>
             </div>
-            <div class="intel-cell">
-              <p class="mono faint">Grav pulse</p>
-              <strong id="grav">0.002 g</strong>
+            <div class="stat-card">
+              <span class="mono">Active recipes</span>
+              <strong>8,492</strong>
             </div>
-            <div class="intel-cell">
-              <p class="mono faint">Drift</p>
-              <strong id="drift">-2.4°</strong>
+            <div class="stat-card">
+              <span class="mono">Market sync</span>
+              <strong>4 stores</strong>
             </div>
-            <div class="intel-cell">
-              <p class="mono faint">Sync</p>
-              <strong id="sync">Locked</strong>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="assistant-card">
+            <div class="assistant-header">
+              <div>
+                <p class="mono">Ava // AI Guide</p>
+                <h3>What should we cook tonight?</h3>
+              </div>
+              <span class="pulse"></span>
+            </div>
+            <div class="assistant-chat">
+              <div class="chat bubble">I can build a 20-minute high-protein bowl with ingredients already in your pantry.</div>
+              <div class="chat bubble faint">Need a vegan swap? I have three.</div>
+            </div>
+            <div class="assistant-actions">
+              <button class="chip">Surprise me</button>
+              <button class="chip">Low carb</button>
+              <button class="chip">Budget ₹250</button>
+            </div>
+          </div>
+          <div class="highlight-grid">
+            <div class="highlight">
+              <p class="mono">Featured recipe</p>
+              <h4>Neo Tikka Power Bowl</h4>
+              <p class="faint">Ginger-garlic glaze, 32g protein, ready in 18 mins.</p>
+            </div>
+            <div class="highlight">
+              <p class="mono">Kitchen pulse</p>
+              <h4>Fridge scan ready</h4>
+              <p class="faint">Connect a camera or upload a list of pantry items.</p>
             </div>
           </div>
         </div>
       </div>
+
+      <section class="panel">
+        <header class="section-head">
+          <p class="eyebrow">Featured recipes</p>
+          <h2>Trending right now</h2>
+          <p class="faint">Curated by flavor, cost efficiency, and community saves.</p>
+        </header>
+        <div class="card-grid">
+          <article class="recipe-card">
+            <div class="card-media">Pulse Curry</div>
+            <div class="card-body">
+              <h3>Quantum Lentil Curry</h3>
+              <p class="faint">20 mins · Vegan · ₹180</p>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card">
+            <div class="card-media">Glow Ramen</div>
+            <div class="card-body">
+              <h3>Neon Miso Ramen</h3>
+              <p class="faint">25 mins · Comfort · ₹240</p>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card">
+            <div class="card-media">Orbit Salad</div>
+            <div class="card-body">
+              <h3>Solar Crunch Salad</h3>
+              <p class="faint">15 mins · Gluten-free · ₹160</p>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </section>
 
-    <section class="panel-grid missions" id="missions">
-      <header class="section-head">
-        <p class="eyebrow">Mission stack</p>
-        <h2>Run luminous expeditions without losing your cool.</h2>
-      </header>
-      <div class="grid">
-        <article class="card tall">
-          <p class="mono">Spectral Harvest</p>
-          <h3>Harvest auroras for power.</h3>
-          <p>Deploy filament nets across solar waves to capture charged photons and feed the core.</p>
-          <div class="meta">
-            <span class="tag">Energy</span>
-            <span class="tag">Autonomy</span>
-          </div>
-        </article>
-        <article class="card tall">
-          <p class="mono">Orbital Drift</p>
-          <h3>Chart silent anomalies.</h3>
-          <p>Pair LiDAR ribbons with nano buoy markers to map dark matter ripples around derelict stations.</p>
-          <div class="meta">
-            <span class="tag">Navigation</span>
-            <span class="tag">AI</span>
-          </div>
-        </article>
-        <article class="card tall">
-          <p class="mono">Helix Bloom</p>
-          <h3>Grow oxygen from starlight.</h3>
-          <p>Seed engineered algae into comet tails and accelerate terraforming with ultraviolet lattices.</p>
-          <div class="meta">
-            <span class="tag">Bio</span>
-            <span class="tag">Terraforming</span>
-          </div>
-        </article>
+    <section class="tab-panel" id="recipes" aria-labelledby="Recipes">
+      <div class="panel">
+        <header class="section-head">
+          <p class="eyebrow">Recipe vault</p>
+          <h2>Search, filter, and build your plan</h2>
+          <p class="faint">Advanced filters highlight nutrition goals, cook time, and difficulty.</p>
+        </header>
+        <div class="search-row">
+          <input id="recipe-search" type="search" placeholder="Search by ingredient, cuisine, or dish" aria-label="Search recipes" />
+          <select id="difficulty-filter" aria-label="Filter by difficulty">
+            <option value="">Difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="advanced">Advanced</option>
+          </select>
+          <select id="time-filter" aria-label="Filter by time">
+            <option value="">Cook time</option>
+            <option value="quick">Under 20 mins</option>
+            <option value="standard">20-35 mins</option>
+            <option value="long">35+ mins</option>
+          </select>
+          <button class="pill ghost">Sort: Smart Match</button>
+        </div>
+        <p class="faint" id="recipe-count">6 recipes available</p>
+        <div class="card-grid" id="recipe-grid">
+          <article class="recipe-card" data-title="phoenix tofu stirfry" data-difficulty="easy" data-time="quick">
+            <div class="card-media">Phoenix Stir-fry</div>
+            <div class="card-body">
+              <h3>Phoenix Tofu Stir-fry</h3>
+              <p class="faint">18 mins · Easy · 480 kcal</p>
+              <ul class="meta-list">
+                <li>24g protein</li>
+                <li>Crunchy veggies</li>
+                <li>Sesame glaze</li>
+              </ul>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-title="cosmic biryani" data-difficulty="medium" data-time="standard">
+            <div class="card-media">Cosmic Biryani</div>
+            <div class="card-body">
+              <h3>Cosmic Veg Biryani</h3>
+              <p class="faint">32 mins · Medium · 560 kcal</p>
+              <ul class="meta-list">
+                <li>One-pot cook</li>
+                <li>Spice balance</li>
+                <li>Serves 3</li>
+              </ul>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-title="aurora chicken bowl" data-difficulty="easy" data-time="standard">
+            <div class="card-media">Aurora Bowl</div>
+            <div class="card-body">
+              <h3>Aurora Chicken Bowl</h3>
+              <p class="faint">28 mins · Easy · 620 kcal</p>
+              <ul class="meta-list">
+                <li>35g protein</li>
+                <li>Brown rice</li>
+                <li>Pickled veggies</li>
+              </ul>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-title="stellar mushroom pasta" data-difficulty="medium" data-time="long">
+            <div class="card-media">Stellar Pasta</div>
+            <div class="card-body">
+              <h3>Stellar Mushroom Pasta</h3>
+              <p class="faint">40 mins · Medium · 510 kcal</p>
+              <ul class="meta-list">
+                <li>Truffle oil</li>
+                <li>Spinach mix</li>
+                <li>Creamy texture</li>
+              </ul>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-title="galaxy oats" data-difficulty="easy" data-time="quick">
+            <div class="card-media">Galaxy Oats</div>
+            <div class="card-body">
+              <h3>Galaxy Overnight Oats</h3>
+              <p class="faint">10 mins · Easy · 380 kcal</p>
+              <ul class="meta-list">
+                <li>Chia boost</li>
+                <li>Berry swirl</li>
+                <li>Meal prep</li>
+              </ul>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+          <article class="recipe-card" data-title="nova paneer skewers" data-difficulty="advanced" data-time="long">
+            <div class="card-media">Nova Skewers</div>
+            <div class="card-body">
+              <h3>Nova Paneer Skewers</h3>
+              <p class="faint">45 mins · Advanced · 690 kcal</p>
+              <ul class="meta-list">
+                <li>Tandoor style</li>
+                <li>Smoky char</li>
+                <li>Mint drizzle</li>
+              </ul>
+              <div class="card-actions">
+                <button class="icon-btn" data-action="save">Save</button>
+                <button class="icon-btn" data-action="share">Share</button>
+                <button class="icon-btn" data-action="favorite">Favorite</button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="feed" id="feed">
-      <div class="section-head">
-        <p class="eyebrow">Telemetry feed</p>
-        <h2>Incoming bursts from the outer bands.</h2>
+    <section class="tab-panel" id="ingredients" aria-labelledby="Ingredients">
+      <div class="panel">
+        <header class="section-head">
+          <p class="eyebrow">Ingredient command</p>
+          <h2>Smart input with instant store matching</h2>
+          <p class="faint">Compare prices across Zepto, Blinkit, Instamart, and BigBasket before checkout.</p>
+        </header>
+        <div class="ingredient-entry">
+          <div>
+            <label class="mono" for="ingredient-input">Add ingredient</label>
+            <input id="ingredient-input" list="ingredient-suggestions" placeholder="E.g. paneer, spinach, quinoa" />
+            <datalist id="ingredient-suggestions">
+              <option value="Paneer"></option>
+              <option value="Spinach"></option>
+              <option value="Quinoa"></option>
+              <option value="Bell peppers"></option>
+              <option value="Greek yogurt"></option>
+              <option value="Mushrooms"></option>
+            </datalist>
+          </div>
+          <button class="pill primary" id="add-ingredient">Add</button>
+        </div>
+        <div class="ingredient-grid">
+          <div class="ingredient-list">
+            <h3>Active ingredients</h3>
+            <ul id="ingredient-list">
+              <li>
+                <span class="item-name">Paneer</span>
+                <span class="price">₹120</span>
+                <button class="remove-btn" type="button" aria-label="Remove Paneer">×</button>
+              </li>
+              <li>
+                <span class="item-name">Spinach</span>
+                <span class="price">₹45</span>
+                <button class="remove-btn" type="button" aria-label="Remove Spinach">×</button>
+              </li>
+            </ul>
+            <div class="summary">
+              <span class="mono">Estimated total</span>
+              <strong id="ingredient-total">₹165</strong>
+            </div>
+          </div>
+          <div class="store-grid">
+            <article class="store-card">
+              <h4>Zepto</h4>
+              <p class="faint">Fastest delivery · 15-20 mins</p>
+              <a class="pill ghost" href="https://www.zeptonow.com/" target="_blank" rel="noreferrer">Check lowest price</a>
+            </article>
+            <article class="store-card">
+              <h4>Blinkit</h4>
+              <p class="faint">Trending deals · Smart bundles</p>
+              <a class="pill ghost" href="https://blinkit.com/" target="_blank" rel="noreferrer">Compare now</a>
+            </article>
+            <article class="store-card">
+              <h4>Instamart</h4>
+              <p class="faint">Live availability · Substitutions</p>
+              <a class="pill ghost" href="https://www.swiggy.com/instamart" target="_blank" rel="noreferrer">View availability</a>
+            </article>
+            <article class="store-card">
+              <h4>BigBasket</h4>
+              <p class="faint">Bulk savings · Subscription perks</p>
+              <a class="pill ghost" href="https://www.bigbasket.com/" target="_blank" rel="noreferrer">Open catalog</a>
+            </article>
+          </div>
+        </div>
       </div>
-      <div class="feed-grid">
-        <article class="blip">
-          <p class="mono">01 // Neptune Halo</p>
-          <p>Spire-6 detected a sapphire filament folding across the station’s magnetosphere. Charge increased by 12%.</p>
-        </article>
-        <article class="blip">
-          <p class="mono">02 // Redshift Bloom</p>
-          <p>Optics pivoted to capture a cascading ruby flare. Data stitched into the vault with zero packet loss.</p>
-        </article>
-        <article class="blip">
-          <p class="mono">03 // Silent Choir</p>
-          <p>A series of sub-audible pulses echoed from the Kuiper shelf. Shields resonate; analysis underway.</p>
-        </article>
+    </section>
+
+    <section class="tab-panel" id="pricing" aria-labelledby="Pricing">
+      <div class="panel">
+        <header class="section-head">
+          <p class="eyebrow">Pricing intelligence</p>
+          <h2>Cheapest ingredient cart summary</h2>
+          <p class="faint">AI scans stores and highlights the lowest cost path for each recipe.</p>
+        </header>
+        <div class="pricing-grid">
+          <div class="price-table">
+            <div class="price-row header">
+              <span>Store</span>
+              <span>Basket cost</span>
+              <span>Delivery</span>
+            </div>
+            <div class="price-row">
+              <span>Zepto</span>
+              <span>₹468</span>
+              <span>₹29</span>
+            </div>
+            <div class="price-row">
+              <span>Blinkit</span>
+              <span>₹492</span>
+              <span>₹19</span>
+            </div>
+            <div class="price-row">
+              <span>Instamart</span>
+              <span>₹455</span>
+              <span>₹39</span>
+            </div>
+            <div class="price-row">
+              <span>BigBasket</span>
+              <span>₹510</span>
+              <span>₹0 (Prime)</span>
+            </div>
+          </div>
+          <div class="price-summary">
+            <h3>Smart pick</h3>
+            <p class="faint">Instamart has the lowest combined cost for your selected recipes.</p>
+            <div class="summary-card">
+              <div>
+                <span class="mono">Subtotal</span>
+                <strong>₹455</strong>
+              </div>
+              <div>
+                <span class="mono">Delivery</span>
+                <strong>₹39</strong>
+              </div>
+              <div>
+                <span class="mono">Total</span>
+                <strong>₹494</strong>
+              </div>
+            </div>
+            <button class="pill primary">Lock prices</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="services" aria-labelledby="Services">
+      <div class="panel">
+        <header class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>Everything the AI kitchen can do</h2>
+        </header>
+        <div class="service-grid">
+          <article class="glass-card">
+            <h3>AI recipe generation</h3>
+            <p class="faint">Structured output with ingredients, steps, nutrition, and store links ready for instant rendering.</p>
+          </article>
+          <article class="glass-card">
+            <h3>Meal planning</h3>
+            <p class="faint">Plan a week of meals, auto-balance macros, and keep your grocery cost within budget.</p>
+          </article>
+          <article class="glass-card">
+            <h3>Smart substitutions</h3>
+            <p class="faint">Swap ingredients in real time based on dietary restrictions, availability, or taste preferences.</p>
+          </article>
+          <article class="glass-card">
+            <h3>Subscription intelligence</h3>
+            <p class="faint">Unlock premium insights, grocery price tracking, and household profiles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="faq" aria-labelledby="FAQ">
+      <div class="panel">
+        <header class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Answers for your crew</h2>
+        </header>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>How does the AI generate recipes?</summary>
+            <p>The assistant transforms your ingredients, dietary goals, and cuisine preferences into structured outputs including steps, nutrition, and store links.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I save and share recipes?</summary>
+            <p>Yes. Use the Save, Share, and Favorite buttons on any recipe card to keep a personalized library and send links to friends.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How are ingredient prices calculated?</summary>
+            <p>Prices are aggregated from grocery partners and updated with the latest availability data before checkout.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does Neon Pantry AI support dietary restrictions?</summary>
+            <p>Absolutely. Select vegan, gluten-free, high-protein, or custom nutrition targets for personalized recommendations.</p>
+          </details>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="logo">Quantum <span>Spire</span></div>
-    <p class="faint">Built for explorers who like their science a little dangerous.</p>
-    <div class="pill ghost">Signal strength: <span id="signal">99.7%</span></div>
+    <div>
+      <div class="logo">Neon Pantry <strong>AI</strong></div>
+      <p class="faint">Futuristic recipe OS with AI-generated meal plans and real-time pricing.</p>
+    </div>
+    <div class="footer-stats">
+      <div>
+        <span class="mono">Favorites</span>
+        <strong id="favorite-count">12</strong>
+      </div>
+      <div>
+        <span class="mono">Saved recipes</span>
+        <strong id="save-count">28</strong>
+      </div>
+      <div>
+        <span class="mono">Active filters</span>
+        <strong id="filter-count">2</strong>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>

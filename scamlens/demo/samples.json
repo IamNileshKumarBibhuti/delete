@@ -1,0 +1,10 @@
+{
+  "samples": [
+    {"id":"parcel","title":"The tiny delivery fee","category":"suspicious","text":"Parcel Service: Your package is on hold. Pay the $1.99 redelivery fee within 30 minutes or it will be returned. Confirm your card details at https://parcel-status.example/verify"},
+    {"id":"bank","title":"The account warning","category":"suspicious","text":"BANK SECURITY ALERT: Your account will be suspended in 15 minutes. Reply with your password and the OTP you receive now so our support team can verify your identity. Do not call the branch."},
+    {"id":"recruiter","title":"The interview deposit","category":"suspicious","text":"Congratulations! You have been selected for a remote job, no interview needed. To reserve your equipment, pay a refundable $75 training deposit today. Contact our recruiter on WhatsApp to transfer the money."},
+    {"id":"code","title":"An ordinary sign-in code","category":"legitimate","text":"Your sign-in verification code is 482193. It expires in 10 minutes. Never share this code with anyone, including our support team. If you did not request it, open your usual app to review account activity."},
+    {"id":"meeting","title":"A normal meeting reminder","category":"legitimate","text":"Hi Alex, a reminder that our project review is tomorrow at 10 AM in meeting room B. Please bring your notes. No action is needed before the meeting. Thanks, Sam."},
+    {"id":"invoice","title":"A changed payment account","category":"ambiguous","text":"Hi, we have changed our bank account for this month's invoice. Please use the new payment details in the attached document instead of the account you paid last month. Can you arrange the transfer today? Regards, Accounts Team."}
+  ]
+}

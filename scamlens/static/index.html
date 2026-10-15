@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5ef" />
+    <meta
+      name="description"
+      content="A private, local AI workspace to help you understand suspicious messages and verify requests independently."
+    />
+    <title>ScamLens — A clearer second look</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231c554a'/%3E%3Ccircle cx='28' cy='28' r='12' stroke='%23f8f5e9' stroke-width='5' fill='none'/%3E%3Cpath d='m38 38 12 12' stroke='%23f8f5e9' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/app.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to workspace</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Application navigation">
+        <a class="brand" href="/" aria-label="ScamLens home">
+          <span class="brand-mark" aria-hidden="true"
+            ><svg viewBox="0 0 32 32" fill="none">
+              <circle
+                cx="13"
+                cy="13"
+                r="7.5"
+                stroke="currentColor"
+                stroke-width="2.5"
+              />
+              <path
+                d="m19 19 7 7"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="m10 13 2 2 4-4"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg
+          ></span>
+          <span
+            >ScamLens<span class="brand-caption"
+              >A clearer second look.</span
+            ></span
+          >
+        </a>
+        <p class="nav-label">YOUR WORKSPACE</p>
+        <nav class="nav-links">
+          <a class="nav-item active" href="#workspace" aria-current="page"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="4" />
+              <path d="M8 9h8M8 13h5M8 17h3" /></svg
+            >Message check<span class="nav-dot"></span
+          ></a>
+          <button class="nav-item" type="button" data-open-guide>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M9 6h11M9 12h11M9 18h11M3.5 6h.1M3.5 12h.1M3.5 18h.1"
+              /></svg
+            >How it works
+          </button>
+          <button class="nav-item" type="button" data-open-privacy>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3 4.5 6v5c0 5 7.5 10 7.5 10s7.5-5 7.5-10V6L12 3Z" />
+              <path d="m8.5 11.5 2.5 2.5 4.5-5" /></svg
+            >Your privacy
+          </button>
+        </nav>
+        <div class="sidebar-note">
+          <div class="leaf-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 4c-9-1-15 3-15 9 0 4 4 6 7 4 4-2 6-7 8-13Z" />
+              <path d="M4 21c1-7 5-10 10-13" />
+            </svg>
+          </div>
+          <p>A pause can make<br />a real difference.</p>
+          <span>Check first. Act with clarity.</span>
+        </div>
+        <div class="sidebar-footer">
+          <span class="tiny-dot"></span> Local workspace<span
+            class="footer-language"
+            >EN</span
+          >
+        </div>
+      </aside>
+
+      <div class="page-column">
+        <header class="topbar">
+          <span class="topbar-title">Your personal message safety desk</span>
+          <div class="topbar-actions">
+            <span class="offline-badge"
+              ><svg viewBox="0 0 20 20" aria-hidden="true">
+                <rect x="3" y="4" width="14" height="10" rx="2" />
+                <path d="M7 17h6M10 14v3" /></svg
+              >Offline by design</span
+            ><span class="topbar-divider"></span
+            ><button
+              id="model-status-button"
+              class="model-status-button"
+              type="button"
+              title="Local AI setup and status"
+            >
+              <span id="model-dot" class="status-dot pending"></span
+              ><span id="model-status-label">Checking local AI</span
+              ><svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="m7 6 4 4-4 4" />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <main id="workspace" class="main-content">
+          <section class="intro" aria-labelledby="main-title">
+            <div>
+              <div class="eyebrow">
+                <span></span> A LITTLE CLARITY BEFORE YOU CLICK
+              </div>
+              <h1 id="main-title">
+                Pause. Check the message.<br /><em>Keep control.</em>
+              </h1>
+              <p class="intro-copy">
+                Something feels off? Take a closer look at the signs,<br
+                  class="desktop-break"
+                />
+                understand the evidence, and find a safer next step.
+              </p>
+            </div>
+            <div class="hero-illustration" aria-hidden="true">
+              <div class="illustration-circle"></div>
+              <div class="message-illustration">
+                <span class="illustration-person"></span>
+                <div class="illustration-lines"><i></i><i></i></div>
+                <div class="illustration-textline"></div>
+                <div class="illustration-textline short"></div>
+                <div class="illustration-check">
+                  <svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-8" /></svg>
+                </div>
+              </div>
+              <span class="sparkle sparkle-one">✦</span
+              ><span class="sparkle sparkle-two">✧</span>
+            </div>
+          </section>
+
+          <div class="workflow" aria-label="How to use ScamLens">
+            <span class="workflow-item"><b>01</b>Add a message</span
+            ><span class="workflow-line"></span
+            ><span class="workflow-item"><b>02</b>Understand the signs</span
+            ><span class="workflow-line"></span
+            ><span class="workflow-item"><b>03</b>Verify independently</span>
+          </div>
+
+          <div
+            id="connection-banner"
+            class="notice connection-notice"
+            role="status"
+            hidden
+          ></div>
+          <div class="workspace-grid">
+            <section
+              class="panel input-panel"
+              aria-labelledby="composer-heading"
+            >
+              <div class="panel-header">
+                <div>
+                  <span class="section-kicker">START HERE</span>
+                  <h2 id="composer-heading">What landed in your inbox?</h2>
+                </div>
+                <span class="panel-number" aria-hidden="true">01</span>
+              </div>
+              <div
+                class="input-tabs"
+                role="tablist"
+                aria-label="Message input format"
+              >
+                <button
+                  id="text-tab"
+                  class="input-tab active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="text-panel"
+                  tabindex="0"
+                >
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M4 4h12M10 4v12M7 16h6" /></svg
+                  >Paste a message</button
+                ><button
+                  id="image-tab"
+                  class="input-tab"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="image-panel"
+                  tabindex="-1"
+                >
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <rect x="3" y="3" width="14" height="14" rx="2" />
+                    <circle cx="7" cy="7" r="1" />
+                    <path d="m3 14 4-4 3 3 3-5 4 6" /></svg
+                  >Upload a screenshot
+                </button>
+              </div>
+
+              <div
+                id="text-panel"
+                class="tab-panel"
+                role="tabpanel"
+                aria-labelledby="text-tab"
+              >
+                <label class="sr-only" for="message-input"
+                  >Message to analyze</label
+                >
+                <textarea
+                  id="message-input"
+                  maxlength="12000"
+                  spellcheck="false"
+                  placeholder="Paste a text message, email, or social media message here…&#10;&#10;Include the sender’s message and any links for a more useful check."
+                  aria-describedby="input-hint character-count"
+                ></textarea>
+                <div class="textarea-footer">
+                  <span id="input-hint"
+                    >Only include details you want to analyze.</span
+                  ><span id="character-count">0 / 12,000</span>
+                </div>
+              </div>
+
+              <div
+                id="image-panel"
+                class="tab-panel image-panel"
+                role="tabpanel"
+                aria-labelledby="image-tab"
+                hidden
+              >
+                <div id="drop-zone" class="drop-zone">
+                  <svg
+                    viewBox="0 0 48 48"
+                    class="upload-icon"
+                    aria-hidden="true"
+                  >
+                    <rect x="7" y="7" width="34" height="34" rx="7" />
+                    <path d="M7 32 17 22l8 8 8-12 8 13M29 13h7M32.5 9.5v7" />
+                    <circle cx="17" cy="16" r="2" /></svg
+                  ><strong>Bring the message into focus</strong>
+                  <p>Drop a screenshot here, or choose a file.</p>
+                  <label
+                    class="button button-secondary file-label"
+                    for="image-input"
+                    >Choose screenshot</label
+                  ><input
+                    id="image-input"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    class="sr-only"
+                  /><span class="file-hint">PNG, JPG or WebP · up to 8 MB</span>
+                </div>
+                <div id="image-preview-area" class="image-preview-area" hidden>
+                  <div class="preview-topline">
+                    <span id="image-filename"></span
+                    ><button
+                      id="remove-image"
+                      class="text-button"
+                      type="button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                  <img
+                    id="image-preview"
+                    alt="Your uploaded screenshot"
+                  /><button
+                    id="extract-text"
+                    class="button button-secondary"
+                    type="button"
+                  >
+                    <svg viewBox="0 0 20 20" aria-hidden="true">
+                      <path
+                        d="M4 7V4h3M13 4h3v3M16 13v3h-3M7 16H4v-3M7 8h6M7 11h6"
+                      /></svg
+                    >Extract text to review
+                  </button>
+                  <p class="image-note">
+                    Review and correct the extracted text before checking it.
+                  </p>
+                </div>
+                <p id="ocr-status" class="ocr-status" role="status">
+                  Checking screenshot support…
+                </p>
+              </div>
+
+              <div
+                id="input-error"
+                class="inline-error"
+                role="alert"
+                hidden
+              ></div>
+              <div
+                id="ocr-message"
+                class="notice ocr-notice"
+                role="status"
+                hidden
+              ></div>
+              <div class="composer-actions">
+                <button
+                  id="analyze-button"
+                  class="button button-primary"
+                  type="button"
+                >
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <circle cx="8.5" cy="8.5" r="5.5" />
+                    <path d="m13 13 4 4" /></svg
+                  ><span>Take a closer look</span
+                  ><svg
+                    class="button-arrow"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 15 15 5M5 5h10v10" />
+                  </svg></button
+                ><button id="clear-button" class="text-button" type="button">
+                  Clear
+                </button>
+              </div>
+              <p class="keyboard-hint">
+                <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to check your message
+              </p>
+
+              <div class="samples-section">
+                <div class="samples-heading">
+                  <span>JUST EXPLORING?</span><span>Try an example</span>
+                </div>
+                <div
+                  id="sample-list"
+                  class="sample-list"
+                  aria-label="Example messages"
+                ></div>
+              </div>
+              <div class="privacy-strip">
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <rect x="4" y="8" width="12" height="9" rx="2" />
+                  <path d="M6 8V6a4 4 0 0 1 8 0v2" />
+                </svg>
+                <p>
+                  Your message stays on this computer. No account.<br />No API
+                  key. No message history saved by ScamLens.
+                </p>
+              </div>
+            </section>
+
+            <section
+              class="panel results-panel"
+              aria-labelledby="results-heading"
+              aria-live="polite"
+              aria-busy="false"
+            >
+              <div class="panel-header">
+                <div>
+                  <span class="section-kicker">YOUR SECOND LOOK</span>
+                  <h2 id="results-heading">Clarity, with the evidence.</h2>
+                </div>
+                <span class="panel-number" aria-hidden="true">02</span>
+              </div>
+              <div id="result-empty" class="result-empty">
+                <div class="empty-visual" aria-hidden="true">
+                  <div class="empty-ring ring-one"></div>
+                  <div class="empty-ring ring-two"></div>
+                  <svg viewBox="0 0 80 80">
+                    <path d="M23 18h25l10 10v34H23V18Z" />
+                    <path d="M48 18v12h10M31 37h18M31 44h12M31 51h8" />
+                    <circle cx="52" cy="54" r="11" />
+                    <path d="m60 62 9 9" /></svg
+                  ><span class="empty-spark">✦</span>
+                </div>
+                <h3>A second look starts here.</h3>
+                <p>
+                  We’ll connect warning signs to the actual<br
+                    class="desktop-break"
+                  />
+                  words in your message, then help you<br
+                    class="desktop-break"
+                  />
+                  choose what to do next.
+                </p>
+                <div class="empty-features">
+                  <span><i aria-hidden="true">✓</i> Clear explanations</span
+                  ><span><i aria-hidden="true">✓</i> Practical next steps</span>
+                </div>
+                <div class="empty-footnote">
+                  A helpful second opinion. Always verify important requests.
+                </div>
+              </div>
+              <div id="result-loading" class="result-loading" hidden>
+                <div class="loading-orbit" aria-hidden="true">
+                  <span></span
+                  ><svg viewBox="0 0 32 32">
+                    <circle cx="13" cy="13" r="8" />
+                    <path d="m19 19 8 8" />
+                  </svg>
+                </div>
+                <span class="section-kicker">TAKING A CLOSER LOOK</span>
+                <h3 id="loading-title">Reading between the lines.</h3>
+                <p id="loading-description">
+                  Checking the message and gathering evidence.
+                </p>
+                <div class="loading-progress"><span></span></div>
+                <div id="loading-elapsed" class="loading-elapsed">
+                  A small local model may take a little time.
+                </div>
+                <button id="cancel-analysis" class="text-button" type="button">
+                  Cancel analysis
+                </button>
+              </div>
+              <div id="result-content" class="result-content" hidden></div>
+            </section>
+          </div>
+          <footer class="page-footer">
+            <span
+              ><svg viewBox="0 0 20 20" aria-hidden="true">
+                <circle cx="10" cy="10" r="7" />
+                <path d="M10 9v5M10 6v.1" /></svg
+              >AI can miss a scam or flag a legitimate message. Verify through a
+              trusted, independent channel.</span
+            ><span class="footer-model">Qwen2.5 · Local AI</span>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <dialog id="help-dialog" class="help-dialog">
+      <div class="dialog-top">
+        <div>
+          <span class="section-kicker" id="dialog-kicker">A LITTLE HELP</span>
+          <h2 id="dialog-title">How ScamLens works</h2>
+        </div>
+        <button
+          id="close-dialog"
+          type="button"
+          class="icon-button"
+          aria-label="Close help"
+        >
+          ×
+        </button>
+      </div>
+      <div id="dialog-content" class="dialog-content"></div>
+      <div class="dialog-bottom">
+        <button id="dialog-done" class="button button-primary" type="button">
+          Got it
+        </button>
+      </div>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden></div>
+  </body>
+</html>

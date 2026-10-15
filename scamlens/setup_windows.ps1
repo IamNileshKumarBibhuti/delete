@@ -78,6 +78,42 @@ function Get-LocalModels {
     catch { return $null }
 }
 
+function Test-BundledModel {
+    param([string]$Path)
+    if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) { return $false }
+    $File = Get-Item -LiteralPath $Path
+    if ($File.Length -lt 1024) {
+        $FirstLine = Get-Content -LiteralPath $Path -TotalCount 1
+        if ($FirstLine -eq 'version https://git-lfs.github.com/spec/v1') {
+            Write-Host 'The model file is a Git LFS pointer; the model weights have not been downloaded.'
+            Write-Host 'Setup will download them using Ollama instead. Internet is needed for this step.'
+        } else {
+            Write-Warning 'The bundled model file is incomplete. It will not be imported; setup will use an Ollama download instead.'
+        }
+        return $false
+    }
+    if ($File.Length -ne 986048512) {
+        Write-Warning 'The bundled model has an unexpected size. It will not be imported; setup will use an Ollama download instead.'
+        return $false
+    }
+    $Stream = [System.IO.File]::OpenRead($Path)
+    try {
+        $Header = New-Object byte[] 4
+        $Read = $Stream.Read($Header, 0, 4)
+    } finally { $Stream.Dispose() }
+    if ($Read -ne 4 -or [System.Text.Encoding]::ASCII.GetString($Header) -ne 'GGUF') {
+        Write-Warning 'The bundled file is not a GGUF model. It will not be imported; setup will use an Ollama download instead.'
+        return $false
+    }
+    Write-Host 'Verifying the bundled model SHA256 (approximately 986 MB)...'
+    $Hash = (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash
+    if ($Hash -ne '183715c435899236895da3869489cc30ac241476b4971a20285b1a462818a5b4') {
+        Write-Warning 'The bundled model checksum did not match. It will not be imported; setup will use a verified Ollama download instead.'
+        return $false
+    }
+    return $true
+}
+
 function Start-LocalOllama {
     param([string]$Ollama)
     # These variables apply to this script and its child processes only.
@@ -167,15 +203,25 @@ print('OCR loaded and read the included screenshot locally.')
 Python and OCR are ready. Ollama is not installed yet.
 Install the official Windows app from https://ollama.com/download/windows
 Open Ollama once, then rerun Setup-Windows.cmd. Administrator elevation is not requested by this script.
-Ollama will download the open-weight qwen2.5:1.5b model (approximately 986 MB).
+Setup will import included, verified model weights or download qwen2.5:1.5b (approximately 986 MB).
 '@
     }
     $Models = Start-LocalOllama -Ollama $Ollama
     $Installed = @($Models.models | Where-Object { $_.name -eq $ModelName -or $_.model -eq $ModelName })
     if ($Installed.Count -eq 0) {
-        Write-Host 'Downloading qwen2.5:1.5b (approximately 986 MB). This is a one-time download...'
-        Invoke-Checked -Executable $Ollama -Arguments @('pull', $ModelName) `
-            -FailureMessage 'Model download failed. Check internet access and free disk space, then rerun setup. Ollama resumes partial downloads.'
+        $BundledWeights = Join-Path $ProjectRoot 'model\Qwen2.5-1.5B-Instruct-Q4_K_M.gguf'
+        $Modelfile = Join-Path $ProjectRoot 'model\Modelfile'
+        $UseBundled = Test-BundledModel -Path $BundledWeights
+        if ($UseBundled -and (Test-Path -LiteralPath $Modelfile -PathType Leaf)) {
+            Write-Host 'Importing the verified bundled Qwen model into Ollama. No model download is needed...'
+            Invoke-Checked -Executable $Ollama -Arguments @('create', $ModelName, '-f', $Modelfile) `
+                -FailureMessage 'The verified local model could not be imported. Check the Ollama error above and model\Modelfile, then rerun setup.'
+        } else {
+            if ($UseBundled) { Write-Warning 'model\Modelfile is missing. Setup will download the Ollama model instead.' }
+            Write-Host 'Downloading qwen2.5:1.5b (approximately 986 MB). This is a one-time download...'
+            Invoke-Checked -Executable $Ollama -Arguments @('pull', $ModelName) `
+                -FailureMessage 'Model download failed. Check internet access and free disk space, then rerun setup. Ollama resumes partial downloads.'
+        }
     } else {
         Write-Host 'qwen2.5:1.5b is already downloaded.'
     }

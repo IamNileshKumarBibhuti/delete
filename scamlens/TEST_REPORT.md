@@ -65,4 +65,10 @@ Observed processing times on this development CPU were roughly 0.6–3.4 seconds
 
 On the user's PC, complete setup, confirm Qwen status is ready, run the included tests, and try the screenshot and invoice examples. Then disconnect internet and repeat an analysis with Ollama running. If anything fails, preserve the terminal error text for troubleshooting; do not send private message contents or credentials.
 
-The model and packages are downloaded once during setup. The source ZIP is not a fully preinstalled Python/Ollama distribution. It contains no GitHub upload automation and nothing was pushed to GitHub.
+The model and packages are downloaded once during setup. The source ZIP is not a fully preinstalled Python/Ollama distribution. The application contains no automatic GitHub upload feature. Repository publication is a separate, explicit development action.
+
+## Bundled-model import verification
+
+The optional 986,048,512-byte GGUF was checked against SHA-256 `183715c435899236895da3869489cc30ac241476b4971a20285b1a462818a5b4`. Its Apache-2.0 license and original template/system settings were preserved. Actual relative-path `ollama create` import succeeded, and a real analysis through the imported model completed with AI active.
+
+The updated setup's validation helper accepted the genuine model and rejected missing files, LFS pointers, truncated files, invalid GGUF headers, and checksum mismatches. Its PowerShell syntax/helper checks passed. Actual execution of the complete launcher on Windows remains unverified.

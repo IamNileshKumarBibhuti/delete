@@ -1,6 +1,6 @@
 # Third-party software and models
 
-ScamLens application code is MIT-licensed. Third-party components retain their original terms. No model weights or vendored dependency binaries are included in the source ZIP.
+ScamLens application code is MIT-licensed. Third-party components retain their original terms. No model weights or vendored dependency binaries are included in the small source ZIP. The Git repository stores the optional Qwen weights through Git LFS, with their original license at `model/LICENSE.txt`.
 
 | Component | Use | Upstream / terms |
 |---|---|---|

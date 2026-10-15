@@ -11,12 +11,18 @@ The practical problem: a warning such as “this may be a scam” often leaves s
 1. **Extract the whole ZIP** to a normal folder, for example `Documents\ScamLens`. Do not run it from inside the ZIP.
 2. Install **Python 3.12, 64-bit** from [python.org](https://www.python.org/downloads/release/python-31210/). Enable **Add Python to PATH**. Python 3.11 also works. Python 3.13+ is deliberately not used because the OCR dependency does not support it.
 3. Install **Ollama for Windows** from [ollama.com/download/windows](https://ollama.com/download/windows), and open Ollama once.
-4. Double-click **`Setup-Windows.cmd`**. Keep internet connected for this one-time step. It creates the local Python environment, installs pinned dependencies and bundled OCR assets, downloads `qwen2.5:1.5b`, and verifies OCR and a real model response. No login or API key is required.
+4. Double-click **`Setup-Windows.cmd`**. Keep internet connected for this one-time step. It creates the local Python environment, installs pinned dependencies and bundled OCR assets, imports bundled `qwen2.5:1.5b` weights when present (or downloads them), and verifies OCR and a real model response. No login or API key is required.
 5. Double-click **`Start-ScamLens.cmd`**. Your browser opens the local app. Keep the terminal window open while using it. Stop with `Ctrl+C`.
 
-**After setup, disconnect the internet and use it offline.** Qwen's weights are downloaded by Ollama (about 1 GB for the default model), not included in this source ZIP. Dependencies and Ollama need additional disk space. A dedicated GPU is not required. With unknown RAM, CPU speed and free memory, response time cannot be guaranteed: the first request loads the model and can be much slower. Close memory-heavy apps if needed. The app never silently substitutes a cloud model.
+**After setup, disconnect the internet and use it offline.** The source ZIP excludes the roughly 1 GB model. In a Git clone, weights are stored with Git LFS under `model/`; setup imports a genuine bundled file after checking its size and SHA-256. If the file is missing or is only an LFS pointer, Ollama downloads the model once. Dependencies and Ollama need additional disk space. A dedicated GPU is not required. With unknown RAM, CPU speed and free memory, response time cannot be guaranteed: the first request loads the model and can be much slower. Close memory-heavy apps if needed. The app never silently substitutes a cloud model.
 
 Only one analysis runs at a time. If the AI is missing, stopped, times out, or returns invalid evidence, the app clearly labels **checks only**. That mode is useful for diagnostics but is not a demonstration of working AI.
+
+## Get the bundled model from GitHub
+
+The repository stores `model/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf` through **Git LFS**. Install Git LFS, clone the `scamlens` branch, and run `git lfs pull` from the repository root to retrieve the actual weights. Open the `scamlens` project subfolder in VS Code.
+
+GitHub's source ZIP may contain an LFS pointer instead of model bytes. The setup script detects that case and uses the normal Ollama download. It never imports an unverified pointer or damaged file. See `model/README.md` for the exact checksum and manual offline import command.
 
 ## Use it in VS Code
 
@@ -81,6 +87,7 @@ The model provides interpretation, not proof. “Insufficient evidence” does *
 | `setup_windows.ps1`, two `.cmd` launchers | Windows dependency setup, checks and launch |
 | `requirements.txt` | Pinned Python/OCR dependencies |
 | `demo/` | Synthetic scenarios and a screenshot for testing |
+| `model/` | Optional Git LFS weights, upstream license and tested local Ollama import file |
 | `tests/` | Analysis and API regression tests |
 | `TEST_REPORT.md` | Checks actually performed, including unverified boundaries |
 | `LICENSE`, `THIRD_PARTY.md` | Application and dependency/model license information |
@@ -116,6 +123,6 @@ On Linux/macOS, create a Python 3.11/3.12 environment, install `requirements.txt
 
 ## License and publication
 
-Original application code is MIT-licensed. Qwen2.5-1.5B-Instruct weights are distributed separately under Apache-2.0; they are not included in this ZIP. See `THIRD_PARTY.md`.
+Original application code is MIT-licensed. Qwen2.5-1.5B-Instruct weights are Apache-2.0 licensed. They are stored separately through Git LFS; the small source ZIP excludes them. The upstream model license is included under `model/LICENSE.txt`. See `THIRD_PARTY.md`.
 
-This delivery does not create a repository or upload anything to GitHub. When you decide to publish, exclude `.venv`, caches and local model weights using the included `.gitignore`. A public repository and license may be required for your hackathon submission; you control that publication step.
+The application does not automatically upload your messages or source code. Git publication is an explicit development action. Keep `.venv`, caches and local logs out of Git; model weights use Git LFS as configured in the repository root. A public repository and license may be required for the hackathon submission.
